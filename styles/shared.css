@@ -68,6 +68,7 @@
 
 .main-outer {
   padding-top: 60px;
+  flex: 1;
 }
 
 .footer {
@@ -164,7 +165,7 @@
   }
 
   #burger-menu {
-    padding: 70px 87px;
+    padding: 91px 87px;
     padding-left: 30px;
   }
 

@@ -81,23 +81,28 @@ h6 {
   isolation: isolate;
 }
 
-
 /* @font-face { */
 /*     font-family: 'DejaVu Sans'; */
 /*     src: url('/public/fonts/dejavu-sans-webfont.woff2'); */
 /* } */
 
-*{
+* {
   color: rgb(var(--color-black));
-  font-family: "Noto Sans Georgian", sans-serif;
+  font-family: 'Noto Sans Georgian', sans-serif;
 }
 
-ul{
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: rgb(var(--color-white));
+}
+
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 
 button {
   all: unset;
