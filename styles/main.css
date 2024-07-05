@@ -1,7 +1,64 @@
+.search-controls{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.search-input-container {
+  width: 100%;
+  display: flex;
+  padding: 12px 16px;
+  gap: 12px;
+  border-radius: 10px;
+  border: 1px solid rgb(var(--color-blue-2), 0.7);
+}
+
+.search-input-container:focus-within {
+  border: 1px solid rgb(var(--color-blue-2), 1);
+}
+
+.filter-modal-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  background: rgb(var(--color-blue-1));
+  width: 100%;
+  padding: 12px 16px;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.filter-modal-toggle:hover {
+  background: rgb(var(--color-blue-1), 0.9);
+}
+
+.filter-modal-toggle:active {
+  background: rgb(var(--color-blue-1), 0.8);
+}
+
+.filter-modal-toggle span {
+  display: block;
+  color: rgb(var(--color-white));
+}
+
+.search-input {
+  flex: 1;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: rgb(var(--color-black));
+}
+
+.search-input::placeholder {
+  color: rgb(var(--color-gray));
+}
+
 #term-list {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  margin-top: 30px;
 }
 
 .term-card {

@@ -4,6 +4,7 @@
   --color-light-blue: 197, 226, 255;
   --color-light-blue-2: 143, 199, 255;
   --color-blue: 6, 114, 221;
+  --color-blue-1: 81, 168, 255;
   --color-blue-2: 0, 92, 184;
 
   --color-white: 253, 253, 253;
@@ -107,4 +108,5 @@ ul {
 button {
   all: unset;
   cursor: pointer;
+  box-sizing: border-box;
 }
