@@ -244,6 +244,31 @@ dialog[open]::backdrop {
   border: 1.2px solid rgb(var(--color-blue));
 }
 
+.base-button {
+  background-color: rgb(var(--color-light-blue));
+  color: rgb(var(--color-black));
+  border: none;
+  padding: 8px 24px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.base-button:hover{
+  background-color: rgb(var(--color-light-blue-2));
+}
+
+.base-button:active {
+  background-color: rgb(var(--color-blue));
+  color: rgb(var(--color-white));
+}
+
+.base-button:disabled {
+  background-color: rgb(var(--color-gray-2));
+  color: rgb(var(--color-black));
+}
+
 @media screen and (min-width: 768px) {
   .header .logo {
     height: 71px;
