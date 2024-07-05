@@ -1,5 +1,5 @@
-.search-controls{
-  display: flex;
+.search-controls {
+  display: none;
   flex-direction: column;
   gap: 30px;
 }
@@ -54,6 +54,33 @@
   color: rgb(var(--color-gray));
 }
 
+.selected-filter-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.selected-filter-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 30px;
+  font-size: 14px;
+  background: rgb(var(--color-light-blue));
+  border-radius: 4px;
+  color: rgb(var(--color-black));
+}
+
+.selected-filter-remove-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  margin: 6px;
+}
+
 #term-list {
   display: flex;
   flex-direction: column;
@@ -102,6 +129,10 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+  .search-controls {
+    display: flex;
+  }
+
   #term-list {
     gap: 30px;
   }
