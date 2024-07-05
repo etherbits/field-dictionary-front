@@ -18,8 +18,8 @@
     <script src="scripts/burger-menu.js" defer></script>
   </head>
   <body>
-    <header class="header">
-      <div class="header-content">
+    <header class="header edge-padding">
+      <div class="header-content width-limiter">
         <a href="/">
           <img class="logo" src="/public/vectors/logo.svg" alt="logo" />
         </a>
@@ -28,8 +28,8 @@
         </button>
       </div>
     </header>
-    <div class="main-outer">
-      <div class="main-inner">
+    <div class="main-outer edge-padding">
+      <div class="width-limiter">
         <main>
           <section id="term-list"></section>
           <ul class="pagination">
@@ -67,5 +67,43 @@
         </main>
       </div>
     </div>
+    <footer class="footer edge-padding">
+      <div class="footer-content width-limiter">
+        <div class="sub-group">
+          <label class="sub-label">გამოიწერეთ სიახლეები:</label>
+          <div class="sub-input-container">
+            <input class="sub-input" type="email" placeholder="ელ. ფოსტა" />
+            <button class="sub-button">
+              <img
+                class="sub-button-img"
+                src="/public/vectors/send.svg"
+                alt="send"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="partner-group">
+          <h6 class="partner-title">პარტნიორები</h6>
+          <div class="partner-logos">
+            <img
+              class="partner-logo"
+              src="/public/vectors/ilia.svg"
+              alt="logo"
+            />
+            <img
+              class="partner-logo"
+              src="/public/vectors/owl.svg"
+              alt="logo"
+            />
+            <img
+              class="partner-logo"
+              src="/public/vectors/unilab.svg"
+              alt="logo"
+            />
+          </div>
+        </div>
+      </div>
+      <span class="copyright">Copyright</span>
+    </footer>
   </body>
 </html>
