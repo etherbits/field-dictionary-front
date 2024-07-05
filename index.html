@@ -155,7 +155,32 @@
       <button id="filter-modal-close-button" class="vector-button">
         <img src="/public/vectors/x.svg" alt="close" />
       </button>
-      filter modal
+      <section class="filter-modal-content">
+        <div class="filter-group">
+          <div class="select-container">
+            <select name="sorting" class="select base-field">
+              <option value="">სორტირება</option>
+              <option value="en">A-დან Z-მდე</option>
+              <option value="ka">ა-დან ჰ-მდე</option>
+              <option value="recent">ბოლოს დამატებული</option>
+            </select>
+            <img
+              class="select-arrow"
+              src="/public/vectors/down.svg"
+              alt="arrow"
+            />
+          </div>
+          <button class="filter-button vector-button">
+            <img src="/public/vectors/retry.svg" alt="reload" />
+          </button>
+        </div>
+        <div class="filter-group">
+          <input class="base-field" placeholder="აკრიფე ასო" />
+          <button class="filter-button vector-button">
+            <img src="/public/vectors/question.svg" alt="question" />
+          </button>
+        </div>
+      </section>
     </dialog>
   </body>
 </html>

@@ -110,3 +110,14 @@ button {
   cursor: pointer;
   box-sizing: border-box;
 }
+
+select {
+  appearance: none;
+  /* safari */
+  -webkit-appearance: none;
+  /* other styles for aesthetics */
+  cursor: pointer;
+  background-color: rgb(var(--color-white));
+  outline: none;
+  border: none;
+}

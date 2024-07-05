@@ -196,7 +196,7 @@ dialog {
   padding: 50px 60px;
 }
 
-dialog .vector-button {
+#filter-modal-close-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -226,7 +226,23 @@ dialog[open]::backdrop {
   }
 }
 
+.base-field {
+  border: 1.2px solid rgb(var(--color-light-blue-2));
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 16px;
+  width: 100%;
+  color: rgb(var(--color-black)); 
+  outline: none;
+}
 
+.base-field::placeholder {
+  color: rgb(var(--color-gray));
+}
+
+.base-field:focus {
+  border: 1.2px solid rgb(var(--color-blue));
+}
 
 @media screen and (min-width: 768px) {
   .header .logo {
