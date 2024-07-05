@@ -146,15 +146,14 @@
   gap: 20px;
 }
 
-
-.pagination{
+.pagination {
   display: flex;
   margin: 0 auto;
   margin-top: 48px;
   width: fit-content;
 }
 
-.pagination button{
+.pagination button {
   display: flex;
   background-color: rgb(var(--color-white));
   width: 45px;
@@ -165,13 +164,69 @@
   border-radius: 8px;
 }
 
-.pagination button.active{
+.pagination button.active {
   background-color: rgb(var(--color-light-blue));
 }
 
-.pagination button:hover{
+.pagination button:hover {
   background-color: rgb(var(--color-gray-2));
 }
+
+::backdrop {
+  background-color: rgba(var(--color-white), 0.7);
+}
+
+/*   Open state of the dialog  */
+dialog[open] {
+  opacity: 1;
+  transform: translateY(0) translateX(-50%);
+}
+
+/*   Closed state of the dialog   */
+dialog {
+  position: relative;
+  top: 232px;
+  left: 50%;
+  opacity: 0;
+  transform: translateY(-50px) translateX(-50%);
+  transition: 250ms ease-out;
+  outline: none;
+  border: 1.2px solid rgb(var(--color-blue-2));
+  border-radius: 10px;
+  padding: 50px 60px;
+}
+
+dialog .vector-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+}
+
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: translateY(-50px) translateX(-50%);
+  }
+}
+
+/* Transition the :backdrop when the dialog modal is promoted to the top layer */
+dialog::backdrop {
+  background-color: rgba(var(--color-white), 0);
+  transition: 250ms ease-out;
+}
+
+dialog[open]::backdrop {
+  background-color: rgba(var(--color-white), 0.7);
+}
+
+@starting-style {
+  dialog[open]::backdrop {
+    background-color: rgba(var(--color-white), 0);
+  }
+}
+
+
 
 @media screen and (min-width: 768px) {
   .header .logo {

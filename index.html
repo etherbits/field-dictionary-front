@@ -15,6 +15,7 @@
     />
     <script src="scripts/term-list.js" defer></script>
     <script src="scripts/burger-menu.js" defer></script>
+    <script src="scripts/dialog.js" defer></script>
   </head>
   <body>
     <header class="header edge-padding">
@@ -28,91 +29,89 @@
       </div>
     </header>
     <div class="main-outer edge-padding">
-      <div class="width-limiter">
-        <main>
-          <section class="search-controls">
-            <div class="search-input-container">
-              <input class="search-input" type="text" placeholder="ძიება" />
-              <button class="search-button">
-                <img
-                  class="search-button-img"
-                  src="/public/vectors/search.svg"
-                  alt="search"
-                />
-              </button>
-            </div>
-            <button class="filter-modal-toggle">
-              <span>ფილტრი</span>
-              <img src="/public/vectors/filter.svg" />
+      <main class="width-limiter">
+        <section class="search-controls">
+          <div class="search-input-container">
+            <input class="search-input" type="text" placeholder="ძიება" />
+            <button class="search-button">
+              <img
+                class="search-button-img"
+                src="/public/vectors/search.svg"
+                alt="search"
+              />
             </button>
-            <ul class="selected-filter-list">
-              <li class="selected-filter-item">
-                ასტროლოგია
-                <button class="selected-filter-remove-button vector-button">
-                  <img src="/public/vectors/x.svg" />
-                </button>
-              </li>
-              <li class="selected-filter-item">
-                ფიზიკა
-                <button class="selected-filter-remove-button vector-button">
-                  <img src="/public/vectors/x.svg" />
-                </button>
-              </li>
-              <li class="selected-filter-item">
-                აგროქიმია
-                <button class="selected-filter-remove-button vector-button">
-                  <img src="/public/vectors/x.svg" />
-                </button>
-              </li>
-              <li class="selected-filter-item">
-                გენეტიკა
-                <button class="selected-filter-remove-button vector-button">
-                  <img src="/public/vectors/x.svg" />
-                </button>
-              </li>
-              <li class="selected-filter-item">
-                მათემატიკა
-                <button class="selected-filter-remove-button vector-button">
-                  <img src="/public/vectors/x.svg" />
-                </button>
-              </li>
-            </ul>
-          </section>
-          <section id="term-list"></section>
-          <ul class="pagination">
-            <li class="pagination-item">
-              <button class="pagination-button">
-                <img src="/public/vectors/double-left.svg" alt="first page" />
+          </div>
+          <button id="filter-modal-open-button" class="filter-modal-toggle">
+            <span>ფილტრი</span>
+            <img src="/public/vectors/filter.svg" />
+          </button>
+          <ul class="selected-filter-list">
+            <li class="selected-filter-item">
+              ასტროლოგია
+              <button class="selected-filter-remove-button vector-button">
+                <img src="/public/vectors/x.svg" />
               </button>
             </li>
-            <li class="pagination-item">
-              <button class="pagination-button">
-                <img src="/public/vectors/left.svg" alt="previous page" />
+            <li class="selected-filter-item">
+              ფიზიკა
+              <button class="selected-filter-remove-button vector-button">
+                <img src="/public/vectors/x.svg" />
               </button>
             </li>
-            <li class="pagination-item">
-              <button class="pagination-button active">1</button>
-            </li>
-            <li class="pagination-item">
-              <button class="pagination-button">2</button>
-            </li>
-            <li class="pagination-item">
-              <button class="pagination-button">...</button>
-            </li>
-
-            <li class="pagination-item">
-              <button class="pagination-button">
-                <img src="/public/vectors/right.svg" alt="next page" />
+            <li class="selected-filter-item">
+              აგროქიმია
+              <button class="selected-filter-remove-button vector-button">
+                <img src="/public/vectors/x.svg" />
               </button>
             </li>
-            <li class="pagination-item">
-              <button class="pagination-button">
-                <img src="/public/vectors/double-right.svg" alt="last page" />
+            <li class="selected-filter-item">
+              გენეტიკა
+              <button class="selected-filter-remove-button vector-button">
+                <img src="/public/vectors/x.svg" />
+              </button>
+            </li>
+            <li class="selected-filter-item">
+              მათემატიკა
+              <button class="selected-filter-remove-button vector-button">
+                <img src="/public/vectors/x.svg" />
               </button>
             </li>
           </ul>
-        </main>
-      </div>
+        </section>
+        <section id="term-list"></section>
+        <ul class="pagination">
+          <li class="pagination-item">
+            <button class="pagination-button">
+              <img src="/public/vectors/double-left.svg" alt="first page" />
+            </button>
+          </li>
+          <li class="pagination-item">
+            <button class="pagination-button">
+              <img src="/public/vectors/left.svg" alt="previous page" />
+            </button>
+          </li>
+          <li class="pagination-item">
+            <button class="pagination-button active">1</button>
+          </li>
+          <li class="pagination-item">
+            <button class="pagination-button">2</button>
+          </li>
+          <li class="pagination-item">
+            <button class="pagination-button">...</button>
+          </li>
+
+          <li class="pagination-item">
+            <button class="pagination-button">
+              <img src="/public/vectors/right.svg" alt="next page" />
+            </button>
+          </li>
+          <li class="pagination-item">
+            <button class="pagination-button">
+              <img src="/public/vectors/double-right.svg" alt="last page" />
+            </button>
+          </li>
+        </ul>
+      </main>
     </div>
     <footer class="footer edge-padding">
       <div class="footer-content width-limiter">
@@ -152,5 +151,11 @@
       </div>
       <span class="copyright">Copyright</span>
     </footer>
+    <dialog>
+      <button id="filter-modal-close-button" class="vector-button">
+        <img src="/public/vectors/x.svg" alt="close" />
+      </button>
+      filter modal
+    </dialog>
   </body>
 </html>
