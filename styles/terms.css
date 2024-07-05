@@ -1,0 +1,76 @@
+#term-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.term-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1.2px solid rgb(var(--color-blue));
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+.term-card .field,
+a {
+  font-size: 14px;
+  color: rgb(var(--color-blue));
+}
+
+.term-card .word-pair {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(var(--color-blue-2));
+}
+
+.term-card .word-type {
+  font-size: 14px;
+  color: rgb(var(--color-green));
+}
+
+.term-card .term-source {
+  font-size: 14px;
+}
+
+.term-card .term-source-label {
+  font-size: 14px;
+  color: rgb(var(--color-gray));
+}
+
+.term-controls {
+  display: flex;
+  gap: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  #term-list {
+    gap: 30px;
+  }
+
+  .term-card {
+    gap: 20px;
+  }
+
+  .term-card .field,
+  a {
+    font-size: 16px;
+  }
+
+  .term-card .word-pair {
+    font-size: 24px;
+  }
+
+  .term-card .word-type {
+    font-size: 16px;
+  }
+
+  .term-card .term-source {
+    font-size: 16px;
+  }
+
+  .term-card .term-source-label {
+    font-size: 16px;
+  }
+}
