@@ -128,6 +128,61 @@ a {
   gap: 16px;
 }
 
+.term-group {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.term-button path {
+  fill: rgb(var(--color-black));
+  transition: 200ms ease-out;
+}
+
+.term-button .svg-outline path {
+  stroke: rgb(var(--color-black));
+}
+
+.term-group.active {
+  display: flex;
+}
+
+.term-button.active path {
+  fill: rgb(var(--color-blue));
+}
+
+.term-button.active .svg-outline path {
+  stroke: rgb(var(--color-blue));
+}
+
+.term-button:hover path {
+  fill: rgb(var(--color-light-blue-2));
+}
+
+.term-button:hover .svg-outline path {
+  stroke: rgb(var(--color-light-blue));
+}
+
+.term-group-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.term-group-sources {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+}
+
+.term-context-source {
+  grid-column: 2;
+}
+
+.context-label{
+  font-size: 14px;
+  color: rgb(var(--color-gray));
+}
+
 .filter-modal-content {
   display: flex;
   flex-direction: column;
@@ -196,7 +251,7 @@ a {
   cursor: pointer;
 }
 
-.checkbox-container label{
+.checkbox-container label {
   font-size: 18px;
   cursor: pointer;
 }
@@ -232,6 +287,10 @@ a {
   }
 
   .term-card .term-source-label {
+    font-size: 16px;
+  }
+
+  .term-group-title {
     font-size: 16px;
   }
 }
