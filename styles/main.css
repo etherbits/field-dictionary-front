@@ -1,3 +1,9 @@
+.main-content {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
 .search-controls {
   display: none;
   flex-direction: column;
@@ -178,12 +184,12 @@ a {
   grid-column: 2;
 }
 
-.context-label{
+.context-label {
   font-size: 14px;
   color: rgb(var(--color-gray));
 }
 
-.filter-modal-content {
+.filter-content {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -197,7 +203,7 @@ a {
   gap: 20px;
 }
 
-.filter-button {
+.filter-icon-container {
   width: 20px;
   height: 20px;
 }
@@ -256,6 +262,14 @@ a {
   cursor: pointer;
 }
 
+.modal-filter-button{
+  width: 100%;
+}
+
+.desktop-filters-content {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .search-controls {
     display: flex;
@@ -292,5 +306,15 @@ a {
 
   .term-group-title {
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .desktop-filters-content {
+    display: flex;
+  }
+
+  .filter-modal-toggle {
+    display: none;
   }
 }

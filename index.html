@@ -29,88 +29,211 @@
       </div>
     </header>
     <div class="main-outer edge-padding">
-      <main class="width-limiter">
-        <section class="search-controls">
-          <div class="search-input-container">
-            <input class="search-input" type="text" placeholder="ძიება" />
-            <button class="search-button">
+      <main class="main-content width-limiter">
+        <section class="desktop-filters-content filter-content">
+          <div class="filter-group">
+            <div class="select-container">
+              <select name="sorting" class="select base-field">
+                <option value="">სორტირება</option>
+                <option value="en">A-დან Z-მდე</option>
+                <option value="ka">ა-დან ჰ-მდე</option>
+                <option value="recent">ბოლოს დამატებული</option>
+              </select>
               <img
-                class="search-button-img"
-                src="/public/vectors/search.svg"
-                alt="search"
+                class="select-arrow"
+                src="/public/vectors/down.svg"
+                alt="arrow"
               />
+            </div>
+            <button class="filter-icon-container vector-button">
+              <img src="/public/vectors/retry.svg" alt="reload" />
             </button>
           </div>
-          <button id="filter-modal-open-button" class="filter-modal-toggle">
-            <span>ფილტრი</span>
-            <img src="/public/vectors/filter.svg" />
-          </button>
-          <ul class="selected-filter-list">
-            <li class="selected-filter-item">
-              ასტროლოგია
-              <button class="selected-filter-remove-button vector-button">
-                <img src="/public/vectors/x.svg" />
+          <div class="filter-group">
+            <input class="base-field" placeholder="აკრიფე ასო" />
+            <div class="filter-icon-container" title="ამ ველში ჩაწერილი ასოთი/ასოებით დაიწყება ტერმინები">
+              <img src="/public/vectors/question.svg" alt="question" />
+            </div>
+          </div>
+          <ul class="checkbox-list level-1">
+            <div class="checkbox-group">
+              <div class="checkbox-container">
+                <input id="science-checkbox" type="checkbox" />
+                <label for="science-checkbox">მეცნიერება</label>
+                <button class="vector-button">
+                  <img src="/public/vectors/down.svg" alt="question" />
+                </button>
+              </div>
+              <ul class="checkbox-list level-2">
+                <div class="checkbox-group">
+                  <div class="checkbox-container">
+                    <input id="physics-checkbox" type="checkbox" />
+                    <label for="physics-checkbox">ფიზიკა</label>
+                    <button class="vector-button">
+                      <img src="/public/vectors/down.svg" alt="question" />
+                    </button>
+                  </div>
+                </div>
+                <div class="checkbox-group">
+                  <div class="checkbox-container">
+                    <input id="math-checkbox" type="checkbox" />
+                    <label for="math-checkbox">მათემატიკა</label>
+                    <button class="vector-button">
+                      <img src="/public/vectors/down.svg" alt="question" />
+                    </button>
+                  </div>
+                </div>
+                <div class="checkbox-group">
+                  <div class="checkbox-container">
+                    <input id="chemistry-checkbox" type="checkbox" />
+                    <label for="chemistry-checkbox">ქიმია</label>
+                    <button class="vector-button">
+                      <img src="/public/vectors/down.svg" alt="question" />
+                    </button>
+                  </div>
+                </div>
+                <div class="checkbox-group">
+                  <div class="checkbox-container">
+                    <input id="geography-checkbox" type="checkbox" />
+                    <label for="geography-checkbox">გეოგრაფია</label>
+                    <button class="vector-button">
+                      <img src="/public/vectors/down.svg" alt="question" />
+                    </button>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            <div class="checkbox-group">
+              <div class="checkbox-container">
+                <input id="tech-checkbox" type="checkbox" />
+                <label for="tech-checkbox">ტექნიკა</label>
+                <button class="vector-button">
+                  <img src="/public/vectors/down.svg" alt="question" />
+                </button>
+              </div>
+            </div>
+            <div class="checkbox-group">
+              <div class="checkbox-container">
+                <input id="nature-checkbox" type="checkbox" />
+                <label for="nature-checkbox">ბუნება</label>
+                <button class="vector-button">
+                  <img src="/public/vectors/down.svg" alt="question" />
+                </button>
+              </div>
+            </div>
+            <div class="checkbox-group">
+              <div class="checkbox-container">
+                <input id="literature-checkbox" type="checkbox" />
+                <label for="literature-checkbox">ლიტერატურა</label>
+                <button class="vector-button">
+                  <img src="/public/vectors/down.svg" alt="question" />
+                </button>
+              </div>
+            </div>
+            <div class="checkbox-group">
+              <div class="checkbox-container">
+                <input id="fantasy-checkbox" type="checkbox" />
+                <label for="fantasy-checkbox">ფენტეზი</label>
+                <button class="vector-button">
+                  <img src="/public/vectors/down.svg" alt="question" />
+                </button>
+              </div>
+            </div>
+            <div class="checkbox-group">
+              <div class="checkbox-container">
+                <input id="astrology-checkbox" type="checkbox" />
+                <label for="astrology-checkbox">ასტროლოგია</label>
+                <button class="vector-button">
+                  <img src="/public/vectors/down.svg" alt="question" />
+                </button>
+              </div>
+            </div>
+          </ul>
+          <button class="base-button">ძებნა</button>
+        </section>
+        <section>
+          <section class="search-controls">
+            <div class="search-input-container">
+              <input class="search-input" type="text" placeholder="ძიება" />
+              <button class="search-button">
+                <img
+                  class="search-button-img"
+                  src="/public/vectors/search.svg"
+                  alt="search"
+                />
+              </button>
+            </div>
+            <button id="filter-modal-open-button" class="filter-modal-toggle">
+              <span>ფილტრი</span>
+              <img src="/public/vectors/filter.svg" />
+            </button>
+            <ul class="selected-filter-list">
+              <li class="selected-filter-item">
+                ასტროლოგია
+                <button class="selected-filter-remove-button vector-button">
+                  <img src="/public/vectors/x.svg" />
+                </button>
+              </li>
+              <li class="selected-filter-item">
+                ფიზიკა
+                <button class="selected-filter-remove-button vector-button">
+                  <img src="/public/vectors/x.svg" />
+                </button>
+              </li>
+              <li class="selected-filter-item">
+                აგროქიმია
+                <button class="selected-filter-remove-button vector-button">
+                  <img src="/public/vectors/x.svg" />
+                </button>
+              </li>
+              <li class="selected-filter-item">
+                გენეტიკა
+                <button class="selected-filter-remove-button vector-button">
+                  <img src="/public/vectors/x.svg" />
+                </button>
+              </li>
+              <li class="selected-filter-item">
+                მათემატიკა
+                <button class="selected-filter-remove-button vector-button">
+                  <img src="/public/vectors/x.svg" />
+                </button>
+              </li>
+            </ul>
+          </section>
+          <section id="term-list"></section>
+          <ul class="pagination">
+            <li class="pagination-item">
+              <button class="pagination-button">
+                <img src="/public/vectors/double-left.svg" alt="first page" />
               </button>
             </li>
-            <li class="selected-filter-item">
-              ფიზიკა
-              <button class="selected-filter-remove-button vector-button">
-                <img src="/public/vectors/x.svg" />
+            <li class="pagination-item">
+              <button class="pagination-button">
+                <img src="/public/vectors/left.svg" alt="previous page" />
               </button>
             </li>
-            <li class="selected-filter-item">
-              აგროქიმია
-              <button class="selected-filter-remove-button vector-button">
-                <img src="/public/vectors/x.svg" />
+            <li class="pagination-item">
+              <button class="pagination-button active">1</button>
+            </li>
+            <li class="pagination-item">
+              <button class="pagination-button">2</button>
+            </li>
+            <li class="pagination-item">
+              <button class="pagination-button">...</button>
+            </li>
+
+            <li class="pagination-item">
+              <button class="pagination-button">
+                <img src="/public/vectors/right.svg" alt="next page" />
               </button>
             </li>
-            <li class="selected-filter-item">
-              გენეტიკა
-              <button class="selected-filter-remove-button vector-button">
-                <img src="/public/vectors/x.svg" />
-              </button>
-            </li>
-            <li class="selected-filter-item">
-              მათემატიკა
-              <button class="selected-filter-remove-button vector-button">
-                <img src="/public/vectors/x.svg" />
+            <li class="pagination-item">
+              <button class="pagination-button">
+                <img src="/public/vectors/double-right.svg" alt="last page" />
               </button>
             </li>
           </ul>
         </section>
-        <section id="term-list"></section>
-        <ul class="pagination">
-          <li class="pagination-item">
-            <button class="pagination-button">
-              <img src="/public/vectors/double-left.svg" alt="first page" />
-            </button>
-          </li>
-          <li class="pagination-item">
-            <button class="pagination-button">
-              <img src="/public/vectors/left.svg" alt="previous page" />
-            </button>
-          </li>
-          <li class="pagination-item">
-            <button class="pagination-button active">1</button>
-          </li>
-          <li class="pagination-item">
-            <button class="pagination-button">2</button>
-          </li>
-          <li class="pagination-item">
-            <button class="pagination-button">...</button>
-          </li>
-
-          <li class="pagination-item">
-            <button class="pagination-button">
-              <img src="/public/vectors/right.svg" alt="next page" />
-            </button>
-          </li>
-          <li class="pagination-item">
-            <button class="pagination-button">
-              <img src="/public/vectors/double-right.svg" alt="last page" />
-            </button>
-          </li>
-        </ul>
       </main>
     </div>
     <footer class="footer edge-padding">
@@ -155,7 +278,7 @@
       <button id="filter-modal-close-button" class="vector-button">
         <img src="/public/vectors/x.svg" alt="close" />
       </button>
-      <section class="filter-modal-content">
+      <section class="filter-content">
         <div class="filter-group">
           <div class="select-container">
             <select name="sorting" class="select base-field">
@@ -170,15 +293,15 @@
               alt="arrow"
             />
           </div>
-          <button class="filter-button vector-button">
+          <button class="filter-icon-container vector-button">
             <img src="/public/vectors/retry.svg" alt="reload" />
           </button>
         </div>
         <div class="filter-group">
           <input class="base-field" placeholder="აკრიფე ასო" />
-          <button class="filter-button vector-button">
+          <div class="filter-icon-container" title="ამ ველში ჩაწერილი ასოთი/ასოებით დაიწყება ტერმინები">
             <img src="/public/vectors/question.svg" alt="question" />
-          </button>
+          </div>
         </div>
         <ul class="checkbox-list level-1">
           <div class="checkbox-group">
@@ -274,7 +397,7 @@
             </div>
           </div>
         </ul>
-        <button class="base-button">ძებნა</button>
+        <button class="base-button modal-filter-button">ძებნა</button>
       </section>
     </dialog>
   </body>

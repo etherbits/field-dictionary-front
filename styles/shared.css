@@ -253,9 +253,11 @@ dialog[open]::backdrop {
   border-radius: 8px;
   cursor: pointer;
   text-align: center;
+  min-width: 150px;
+  width: fit-content;
 }
 
-.base-button:hover{
+.base-button:hover {
   background-color: rgb(var(--color-light-blue-2));
 }
 
@@ -303,8 +305,18 @@ dialog[open]::backdrop {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .pagination {
+    margin-top: 60px;
+  }
+}
+
 @media screen and (min-width: 1280px) {
   #menu-button {
     display: none;
+  }
+
+  .pagination {
+    margin-left: 0;
   }
 }
