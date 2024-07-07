@@ -9,6 +9,10 @@
   width: full;
 }
 
+.desktop-nav {
+  display: none; 
+}
+
 .width-limiter {
   max-width: 1300px;
   margin: 0 auto;
@@ -411,6 +415,17 @@ dialog .info-text {
 @media screen and (min-width: 1280px) {
   #menu-button {
     display: none;
+  }
+
+  .desktop-nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  .desktop-nav a {
+    text-decoration: none;
+    font-size: 20px; 
+    color: rgb(var(--color-blue));
   }
 
   .search-result-number {

@@ -338,4 +338,8 @@ a {
   .filter-modal-toggle {
     display: none;
   }
+
+  .term-list{
+    flex: 1;
+  }
 }
