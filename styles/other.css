@@ -6,10 +6,12 @@
   gap: 30px;
   margin: 0 auto;
   margin-top: 170px;
+  max-width: 900px;
 }
 
 .not-found-title {
   font-size: 28px;
+  font-weight: 500;
 }
 
 /* About */

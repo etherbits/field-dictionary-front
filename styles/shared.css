@@ -10,12 +10,37 @@
 }
 
 .desktop-nav {
-  display: none; 
+  display: none;
 }
 
 .width-limiter {
   max-width: 1300px;
   margin: 0 auto;
+}
+
+.search-input-container {
+  width: 100%;
+  display: flex;
+  padding: 12px 16px;
+  gap: 12px;
+  border-radius: 10px;
+  border: 1px solid rgb(var(--color-blue-2), 0.7);
+}
+
+.search-input-container:focus-within {
+  border: 1px solid rgb(var(--color-blue-2), 1);
+}
+
+.search-input {
+  flex: 1;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: rgb(var(--color-black));
+}
+
+.search-input::placeholder {
+  color: rgb(var(--color-gray));
 }
 
 .vector-button {
@@ -314,7 +339,7 @@ dialog[open]::backdrop {
   color: rgb(var(--color-blue-2));
 }
 
-.input-group{
+.input-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -424,7 +449,7 @@ dialog .info-text {
 
   .desktop-nav a {
     text-decoration: none;
-    font-size: 20px; 
+    font-size: 20px;
     color: rgb(var(--color-blue));
   }
 
