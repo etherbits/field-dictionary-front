@@ -247,8 +247,16 @@
       <div class="footer-content width-limiter">
         <div class="sub-group">
           <label class="sub-label">გამოიწერეთ სიახლეები:</label>
-          <div class="base-field sub-input-container errorable-field">
-            <input class="sub-input" type="email" placeholder="ელ. ფოსტა" />
+          <form
+            class="base-field sub-input-container errorable-field"
+            id="subscribe-form"
+          >
+            <input
+              class="sub-input"
+              type="email"
+              placeholder="ელ. ფოსტა"
+              required
+            />
             <button class="sub-button">
               <svg
                 class="sub-button-img"
@@ -264,7 +272,7 @@
                 />
               </svg>
             </button>
-          </div>
+          </form>
         </div>
         <div class="partner-group">
           <h6 class="partner-title">პარტნიორები</h6>
@@ -425,6 +433,27 @@
           <button class="base-button modal-filter-button">ძებნა</button>
         </section>
       </div>
+    </dialog>
+    <dialog id="success-modal" class="info-modal">
+      <section class="info-modal-content">
+        <img src="/public/vectors/success.svg" alt="success tick" />
+        <p class="info-text">წარმატებით გამოიწერეთ სიახლეები</p>
+        <a class="base-button secondary-button" href="/">
+          მთავარ გვერდზე დაბრუნება
+        </a>
+      </section>
+    </dialog>
+    <dialog id="error-modal" class="info-modal">
+      <section class="info-modal-content">
+        <img src="/public/vectors/error.svg" alt="error" />
+        <p class="info-text">დაფიქსირდა შეცდომა</p>
+        <button
+          class="base-button secondary-button"
+          id="error-modal-close-button"
+        >
+          თავიდან ცდა
+        </button>
+      </section>
     </dialog>
   </body>
 </html>

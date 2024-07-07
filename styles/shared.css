@@ -260,19 +260,19 @@ dialog[open]::backdrop {
   border: 1.2px solid rgb(var(--color-blue));
 }
 
-.errorable-field.error {
+.errorable-field.touched:invalid{
   border: 1.2px solid rgb(var(--color-red));
 }
 
-.errorable-field.error input::placeholder {
+.errorable-field.touched:invalid input::placeholder {
   color: rgb(var(--color-red), 0.6);
 }
 
-.errorable-field.error :is(svg, path) {
+.errorable-field.touched:invalid :is(svg, path) {
   fill: rgb(var(--color-red));
 }
 
-.errorable-field.error::after {
+.errorable-field.touched:invalid::after {
   position: absolute;
   content: 'მითითებული ელ.ფოსტა არასწორია';
   color: rgb(var(--color-red));
@@ -310,12 +310,12 @@ dialog[open]::backdrop {
   color: rgb(var(--color-black));
 }
 
-.secondary-button{
+.secondary-button {
   background-color: rgb(var(--color-white));
   outline: 1px solid rgb(var(--color-light-blue-2));
 }
 
-.not-found-container{
+.not-found-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -324,8 +324,27 @@ dialog[open]::backdrop {
   margin-top: 170px;
 }
 
-.not-found-title{
+.not-found-title {
   font-size: 28px;
+  color: rgb(var(--color-black));
+}
+
+.info-modal{
+  border: none;
+  min-width: 534px;
+}
+
+.info-modal-content{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background: rgb(var(--color-light-blue));
+  align-items: center;
+  padding: 80px;
+}
+
+dialog .info-text{
+  font-size: 24px;
   color: rgb(var(--color-black));
 }
 
