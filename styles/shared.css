@@ -334,35 +334,6 @@ dialog .info-text{
   color: rgb(var(--color-black));
 }
 
-.not-found-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  margin: 0 auto;
-  margin-top: 170px;
-}
-
-.not-found-title {
-  font-size: 28px;
-}
-
-.about-container{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-
-.about-title{
-  font-size: 24px;
-}
-
-.about-text{
-  font-size: 18px;
-}
-
 @media screen and (min-width: 768px) {
   .header .logo {
     height: 71px;
