@@ -50,3 +50,34 @@ subscribeButton.addEventListener('mousedown', () => {
 errorDialogCloseButton.addEventListener('click', () => {
   errorDialog.close()
 })
+
+const contactForm = document.querySelector('#contact-form')
+const successDialogContact = document.querySelector('#success-modal-contact')
+const errorDialogContact = document.querySelector('#error-modal-contact')
+const errorDialogCloseButtonContact = document.querySelector(
+  '#error-modal-close-button-contact'
+)
+
+let didSubmitContact = false
+
+contactForm?.addEventListener('submit', (e) => {
+  e.preventDefault()
+  didSubmitContact = true
+})
+
+const contactButton = contactForm.querySelector('button')
+contactButton?.addEventListener('mousedown', () => {
+  didSubmitContact = false
+  setTimeout(() => {
+    if (didSubmitContact) {
+      successDialogContact.showModal()
+    } else {
+      errorDialogContact.showModal()
+    }
+  }, 200)
+})
+
+errorDialogCloseButtonContact?.addEventListener('click', () => {
+  errorDialogContact.close()
+})
+

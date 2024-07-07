@@ -260,26 +260,60 @@ dialog[open]::backdrop {
   border: 1.2px solid rgb(var(--color-blue));
 }
 
-.errorable-field.touched:invalid{
+.errorable-field {
+  position: relative;
+  transition: border 250ms ease-out;
+}
+
+.errorable-field.touched:has(.field-input:invalid) {
   border: 1.2px solid rgb(var(--color-red));
 }
 
-.errorable-field.touched:invalid input::placeholder {
+.errorable-field input::placeholder {
+  transition: color 250ms ease-out;
+}
+
+.errorable-field.touched:has(.field-input:invalid) .field-input::placeholder {
   color: rgb(var(--color-red), 0.6);
 }
 
-.errorable-field.touched:invalid :is(svg, path) {
+.errorable-field :is(svg, path) {
+  transition: fill 250ms ease-out;
+}
+
+.errorable-field.touched:has(.field-input:invalid) :is(svg, path) {
   fill: rgb(var(--color-red));
 }
 
-.errorable-field.touched:invalid::after {
+.errorable-field span {
   position: absolute;
-  content: 'მითითებული ელ.ფოსტა არასწორია';
-  color: rgb(var(--color-red));
-  font-size: 14px;
   bottom: -4px;
   left: 0;
   transform: translateY(100%);
+  color: rgb(var(--color-red));
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms ease-out;
+}
+
+.errorable-field.touched:has(.field-input:invalid) span {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.input-container :is(input, textarea) {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: rgb(var(--color-blue-2));
+}
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .base-button {
@@ -315,12 +349,12 @@ dialog[open]::backdrop {
   outline: 1px solid rgb(var(--color-light-blue-2));
 }
 
-.info-modal{
+.info-modal {
   border: none;
   min-width: 534px;
 }
 
-.info-modal-content{
+.info-modal-content {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -329,7 +363,7 @@ dialog[open]::backdrop {
   padding: 80px;
 }
 
-dialog .info-text{
+dialog .info-text {
   font-size: 24px;
   color: rgb(var(--color-black));
 }

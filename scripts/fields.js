@@ -1,7 +1,8 @@
 const errorableFields = document.querySelectorAll('.errorable-field')
 
 errorableFields.forEach((field) => {
-  const input = field.querySelector('input')
+  input = field.querySelector('input') ?? field.querySelector('textarea')
+  console.log(input)
 
   input.addEventListener('blur', () => field.classList.add('touched'))
 })
