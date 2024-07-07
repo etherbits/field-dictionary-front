@@ -4,6 +4,10 @@
   justify-content: center;
 }
 
+.right-section{
+  flex: 1;
+}
+
 .search-controls {
   display: none;
   flex-direction: column;
@@ -101,6 +105,7 @@
   border: 1.2px solid rgb(var(--color-blue));
   border-radius: 10px;
   padding: 12px 16px;
+  width: 100%;
 }
 
 .term-card .field,
