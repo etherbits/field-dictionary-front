@@ -4,12 +4,12 @@ const showButton = document.querySelector('#filter-modal-open-button')
 const closeButton = document.querySelector('#filter-modal-close-button')
 
 // "Show the dialog" button opens the dialog modally
-showButton.addEventListener('click', () => {
+showButton?.addEventListener('click', () => {
   filterDialog.showModal()
 })
 
 // "Close" button closes the dialog
-closeButton.addEventListener('click', () => {
+closeButton?.addEventListener('click', () => {
   filterDialog.close()
 })
 

@@ -12,8 +12,9 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="scripts/term-list.js" defer></script>
-    <script src="scripts/burger-menu.js" defer></script>
+    <script src="/scripts/burger-menu.js" defer></script>
+    <script src="/scripts/fields.js" defer></script>
+    <script src="/scripts/dialogs.js" defer></script>
   </head>
   <body>
     <header class="header edge-padding">
@@ -40,8 +41,16 @@
       <div class="footer-content width-limiter">
         <div class="sub-group">
           <label class="sub-label">გამოიწერეთ სიახლეები:</label>
-          <div class="base-field sub-input-container errorable-field">
-            <input class="sub-input" type="email" placeholder="ელ. ფოსტა" />
+          <form
+            class="base-field sub-input-container errorable-field"
+            id="subscribe-form"
+          >
+            <input
+              class="sub-input"
+              type="email"
+              placeholder="ელ. ფოსტა"
+              required
+            />
             <button class="sub-button">
               <svg
                 class="sub-button-img"
@@ -57,8 +66,57 @@
                 />
               </svg>
             </button>
+          </form>
+        </div>
+        <div class="partner-group">
+          <h6 class="partner-title">პარტნიორები</h6>
+          <div class="partner-logos">
+            <a href="https://iliauni.edu.ge/ge">
+              <img
+                class="partner-logo"
+                src="/public/vectors/ilia.svg"
+                alt="logo"
+              />
+            </a>
+            <a href="https://terms.iliauni.edu.ge/">
+              <img
+                class="partner-logo"
+                src="/public/vectors/owl.svg"
+                alt="logo"
+              />
+            </a>
+            <a href="https://unilab.iliauni.edu.ge/">
+              <img
+                class="partner-logo"
+                src="/public/vectors/unilab.svg"
+                alt="logo"
+              />
+            </a>
           </div>
         </div>
       </div>
+      <span class="copyright">Copyright</span>
+    </footer>
+    <dialog id="success-modal" class="info-modal">
+      <section class="info-modal-content">
+        <img src="/public/vectors/success.svg" alt="success tick" />
+        <p class="info-text">წარმატებით გამოიწერეთ სიახლეები</p>
+        <a class="base-button secondary-button" href="/">
+          მთავარ გვერდზე დაბრუნება
+        </a>
+      </section>
+    </dialog>
+    <dialog id="error-modal" class="info-modal">
+      <section class="info-modal-content">
+        <img src="/public/vectors/error.svg" alt="error" />
+        <p class="info-text">დაფიქსირდა შეცდომა</p>
+        <button
+          class="base-button secondary-button"
+          id="error-modal-close-button"
+        >
+          თავიდან ცდა
+        </button>
+      </section>
+    </dialog>
   </body>
 </html>
