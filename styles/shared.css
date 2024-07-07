@@ -315,20 +315,6 @@ dialog[open]::backdrop {
   outline: 1px solid rgb(var(--color-light-blue-2));
 }
 
-.not-found-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  margin: 0 auto;
-  margin-top: 170px;
-}
-
-.not-found-title {
-  font-size: 28px;
-  color: rgb(var(--color-black));
-}
-
 .info-modal{
   border: none;
   min-width: 534px;
@@ -346,6 +332,35 @@ dialog[open]::backdrop {
 dialog .info-text{
   font-size: 24px;
   color: rgb(var(--color-black));
+}
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto;
+  margin-top: 170px;
+}
+
+.not-found-title {
+  font-size: 28px;
+}
+
+.about-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.about-title{
+  font-size: 24px;
+}
+
+.about-text{
+  font-size: 18px;
 }
 
 @media screen and (min-width: 768px) {
