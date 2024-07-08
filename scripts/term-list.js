@@ -14,7 +14,7 @@ async function generateTermList() {
           })
           .join(' > ')}
 				</div>
-				<h3 class="word-pair">${term.word_ka} - ${term.word_en}</h3>
+				<a href="/word-detail.html" class="unstyled-link"><h3 class="word-pair">${term.word_ka} - ${term.word_en}</h3></a>
 				<span class="word-type">${term.type}</span>
 				<p class="term-source"><span class="term-source-label">ტერმინის წყარო: </span>${term.source}</p>
 				<section class="term-controls">

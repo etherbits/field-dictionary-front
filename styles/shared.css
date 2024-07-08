@@ -270,6 +270,11 @@ dialog[open]::backdrop {
   background-color: rgba(var(--color-white), 0.7);
 }
 
+.unstyled-link{
+  text-decoration: none;
+  color: inherit;
+}
+
 .base-field {
   position: relative;
   border: 1.2px solid rgb(var(--color-light-blue-2));
@@ -357,6 +362,7 @@ dialog[open]::backdrop {
   min-width: 150px;
   width: fit-content;
   text-decoration: none;
+  transition: background-color 150ms, color 150ms;
 }
 
 .base-button:hover {
@@ -375,7 +381,12 @@ dialog[open]::backdrop {
 
 .secondary-button {
   background-color: rgb(var(--color-white));
-  outline: 1px solid rgb(var(--color-light-blue-2));
+  border: 1px solid rgb(var(--color-light-blue-2));
+}
+
+
+.secondary-button:active {
+  border: 1px solid rgb(var(--color-blue));
 }
 
 .info-modal {
