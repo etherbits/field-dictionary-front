@@ -1,0 +1,87 @@
+.term-word-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.term-word-container > *:not(h1):not(.go-back-button-container) {
+  margin-bottom: 20px;
+}
+
+.term-word-container .term-word-detail {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(var(--color-blue-2));
+  margin-bottom: 30px;
+}
+
+.term-word-container .term-word-type {
+  font-size: 16px;
+  color: rgb(var(--color-green));
+}
+
+.term-word-container .term-qualifications {
+  font-size: 16px;
+  color: rgb(var(--color-black));
+}
+
+.term-word-container .term-field {
+  color: rgb(var(--color-blue));
+}
+.term-word-container .term-field a {
+  color: rgb(var(--color-blue));
+}
+
+.term-word-container section h2 {
+  font-size: 16px;
+  color: rgb(var(--color-gray));
+  margin-bottom: 4px;
+}
+.term-word-container section p {
+  color: rgb(var(--color-black));
+}
+
+.term-word-container section p a {
+  color: rgb(var(--color-blue));
+}
+
+.term-word-container section ul {
+  display: flex;
+  gap: 6px;
+  list-style-type: none;
+}
+
+.term-word-container section ul li a {
+  font-size: 16px;
+  color: rgb(var(--color-blue));
+}
+
+.term-word-container .go-back-button-container {
+  width: 245px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 8px 24px;
+  gap: 12px;
+  border-radius: 10px;
+  border: 1px solid rgb(var(--color-blue-2), 0.7);
+  cursor: pointer;
+}
+
+.go-back-button-container .go-back-button {
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: rgb(var(--color-black));
+}
+
+.go-back-button-container span {
+  font-size: 18px;
+  color: rgb(var(--color-black));
+}
+
+@media screen and (min-width: 1280px) {
+  .term-word-container .go-back-button-container {
+    margin-top: 60px;
+  }
+}
