@@ -350,7 +350,7 @@ dialog[open]::backdrop {
   color: rgb(var(--color-black));
   border: none;
   padding: 8px 24px;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
   text-align: center;
@@ -434,6 +434,10 @@ dialog .info-text {
 @media screen and (min-width: 768px) {
   .term-list-bottom-bar {
     margin-top: 60px;
+  }
+
+  .base-button{
+    font-size: 18px;
   }
 }
 
