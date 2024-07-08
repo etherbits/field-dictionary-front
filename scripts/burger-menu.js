@@ -56,8 +56,17 @@ function generateBurgerMenu() {
   document.body.appendChild(template.content.cloneNode(true))
 
   const closeButton = document.querySelector('#burger-menu-close-button')
+  const burgerMenu = document.querySelector('#burger-menu')
+  const menuButton = document.querySelector('#menu-button')
+
   closeButton.addEventListener('click', () => {
-    const burgerMenu = document.querySelector('#burger-menu')
+    burgerMenu.classList.remove('active')
+  })
+
+  document.addEventListener('click', (event) => {
+    if (burgerMenu.contains(event.target) || menuButton.contains(event.target))
+      return
+
     burgerMenu.classList.remove('active')
   })
 }
