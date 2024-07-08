@@ -9,9 +9,38 @@
   width: full;
 }
 
+.desktop-nav {
+  display: none;
+}
+
 .width-limiter {
   max-width: 1300px;
   margin: 0 auto;
+}
+
+.search-input-container {
+  width: 100%;
+  display: flex;
+  padding: 12px 16px;
+  gap: 12px;
+  border-radius: 10px;
+  border: 1px solid rgb(var(--color-blue-2), 0.7);
+}
+
+.search-input-container:focus-within {
+  border: 1px solid rgb(var(--color-blue-2), 1);
+}
+
+.search-input {
+  flex: 1;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: rgb(var(--color-black));
+}
+
+.search-input::placeholder {
+  color: rgb(var(--color-gray));
 }
 
 .vector-button {
@@ -241,6 +270,11 @@ dialog[open]::backdrop {
   background-color: rgba(var(--color-white), 0.7);
 }
 
+.unstyled-link{
+  text-decoration: none;
+  color: inherit;
+}
+
 .base-field {
   position: relative;
   border: 1.2px solid rgb(var(--color-light-blue-2));
@@ -260,26 +294,60 @@ dialog[open]::backdrop {
   border: 1.2px solid rgb(var(--color-blue));
 }
 
-.errorable-field.error {
+.errorable-field {
+  position: relative;
+  transition: border 250ms ease-out;
+}
+
+.errorable-field.touched:has(.field-input:invalid) {
   border: 1.2px solid rgb(var(--color-red));
 }
 
-.errorable-field.error input::placeholder {
+.errorable-field input::placeholder {
+  transition: color 250ms ease-out;
+}
+
+.errorable-field.touched:has(.field-input:invalid) .field-input::placeholder {
   color: rgb(var(--color-red), 0.6);
 }
 
-.errorable-field.error :is(svg, path) {
+.errorable-field :is(svg, path) {
+  transition: fill 250ms ease-out;
+}
+
+.errorable-field.touched:has(.field-input:invalid) :is(svg, path) {
   fill: rgb(var(--color-red));
 }
 
-.errorable-field.error::after {
+.errorable-field span {
   position: absolute;
-  content: 'მითითებული ელ.ფოსტა არასწორია';
-  color: rgb(var(--color-red));
-  font-size: 14px;
   bottom: -4px;
   left: 0;
   transform: translateY(100%);
+  color: rgb(var(--color-red));
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms ease-out;
+}
+
+.errorable-field.touched:has(.field-input:invalid) span {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.input-container :is(input, textarea) {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: rgb(var(--color-blue-2));
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .base-button {
@@ -287,12 +355,14 @@ dialog[open]::backdrop {
   color: rgb(var(--color-black));
   border: none;
   padding: 8px 24px;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
   text-align: center;
   min-width: 150px;
   width: fit-content;
+  text-decoration: none;
+  transition: background-color 150ms, color 150ms;
 }
 
 .base-button:hover {
@@ -306,6 +376,35 @@ dialog[open]::backdrop {
 
 .base-button:disabled {
   background-color: rgb(var(--color-gray-2));
+  color: rgb(var(--color-black));
+}
+
+.secondary-button {
+  background-color: rgb(var(--color-white));
+  border: 1px solid rgb(var(--color-light-blue-2));
+}
+
+
+.secondary-button:active {
+  border: 1px solid rgb(var(--color-blue));
+}
+
+.info-modal {
+  border: none;
+  min-width: 534px;
+}
+
+.info-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background: rgb(var(--color-light-blue));
+  align-items: center;
+  padding: 80px;
+}
+
+dialog .info-text {
+  font-size: 24px;
   color: rgb(var(--color-black));
 }
 
@@ -347,11 +446,26 @@ dialog[open]::backdrop {
   .term-list-bottom-bar {
     margin-top: 60px;
   }
+
+  .base-button{
+    font-size: 18px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
   #menu-button {
     display: none;
+  }
+
+  .desktop-nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  .desktop-nav a {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(var(--color-blue));
   }
 
   .search-result-number {
