@@ -65,7 +65,7 @@ contactForm?.addEventListener('submit', (e) => {
   didSubmitContact = true
 })
 
-const contactButton = contactForm.querySelector('button')
+const contactButton = contactForm?.querySelector('button')
 contactButton?.addEventListener('mousedown', () => {
   didSubmitContact = false
   setTimeout(() => {
