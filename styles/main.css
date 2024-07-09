@@ -173,7 +173,7 @@ a {
 .term-group-sources {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 8px;
+  gap: 0 8px;
 }
 
 .term-context-source {
@@ -236,6 +236,13 @@ a {
 .checkbox-list.level-2 {
   margin-left: 30px;
   margin-top: 10px;
+  gap: 4px;
+}
+
+.checkbox-list.level-3{
+  margin-left: 30px;
+  margin-top: 4px;
+  gap: 4px;
 }
 
 .checkbox-container {
@@ -246,6 +253,11 @@ a {
 
 .checkbox-container .vector-button {
   margin-left: auto;
+  rotate: -90deg;
+}
+
+.checkbox-container.active .vector-button{
+  rotate: 0deg;
 }
 
 .checkbox-container input {

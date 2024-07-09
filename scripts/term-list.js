@@ -10,11 +10,16 @@ async function generateTermList() {
 				<div class="field">
 				${term.fields
           .map((field) => {
+            if (field.type == 'list') {
+              return field.list.map(
+                (field) => `<a href="${field.link}">${field.value}</a>`
+              ).join(", ")
+            }
             return `<a href="${field.link}">${field.value}</a>`
           })
           .join(' > ')}
 				</div>
-				<a href="/word-detail.html" class="unstyled-link"><h3 class="word-pair">${term.word_ka} - ${term.word_en}</h3></a>
+				<a href="/term-detail.html" class="unstyled-link"><h3 class="word-pair">${term.word_en} - ${term.word_ka}</h3></a>
 				<span class="word-type">${term.type}</span>
 				<p class="term-source"><span class="term-source-label">ტერმინის წყარო: </span>${term.source}</p>
 				<section class="term-controls">
@@ -104,7 +109,7 @@ async function generateTermList() {
 function toggleGroupActive(termGroupId, buttonId) {
   const button = document.getElementById(buttonId)
   const termGroup = document.getElementById(termGroupId)
-	console.log(termGroupId, buttonId)
+  console.log(termGroupId, buttonId)
   termGroup.classList.toggle('active')
   button.classList.toggle('active')
 }

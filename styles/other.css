@@ -1,11 +1,22 @@
 /* 404 */
+.main-outer{
+  display: flex;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+
 .not-found-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  height: fit-content;
   margin: 0 auto;
   margin-top: 100px;
+  width: 100%;
   max-width: 900px;
 }
 
@@ -32,13 +43,13 @@
 }
 
 /* Contact */
-
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 28px;
   margin-top: 20px;
   width: 100%;
+  height: fit-content;
 }
 
 .contact-form .input-group:has(textarea) {
@@ -69,8 +80,8 @@
     font-size: 28px;
   }
 
-  .not-found-container {
-    margin-top: 170px;
+  .not-found-container{
+    margin: auto;
   }
 
   .about-title {

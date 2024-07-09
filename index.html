@@ -17,6 +17,7 @@
     <script src="scripts/burger-menu.js" defer></script>
     <script src="scripts/dialogs.js" defer></script>
     <script src="scripts/fields.js" defer></script>
+    <script src="scripts/filters.js" defer></script>
   </head>
   <body>
     <header class="header edge-padding">
@@ -50,7 +51,10 @@
                 alt="arrow"
               />
             </div>
-            <button class="filter-icon-container vector-button">
+            <button
+              class="filter-icon-container vector-button reset-filters-button"
+              title="ფილტრების გასუფთავება"
+            >
               <img src="/public/vectors/retry.svg" alt="reload" />
             </button>
           </div>
@@ -65,7 +69,7 @@
           </div>
           <ul class="checkbox-list level-1">
             <div class="checkbox-group">
-              <div class="checkbox-container">
+              <div class="checkbox-container active">
                 <input id="science-checkbox-desktop" type="checkbox" />
                 <label for="science-checkbox-desktop">მეცნიერება</label>
                 <button class="vector-button">
@@ -83,13 +87,27 @@
                   </div>
                 </div>
                 <div class="checkbox-group">
-                  <div class="checkbox-container">
+                  <div class="checkbox-container active">
                     <input id="math-checkbox-desktop" type="checkbox" />
                     <label for="math-checkbox-desktop">მათემატიკა</label>
                     <button class="vector-button">
                       <img src="/public/vectors/down.svg" alt="arrow down" />
                     </button>
                   </div>
+                  <ul class="checkbox-list level-3">
+                    <div class="checkbox-group">
+                      <div class="checkbox-container">
+                        <input id="algebra-checkbox" type="checkbox" />
+                        <label for="algebra-checkbox">ალგებრა</label>
+                      </div>
+                    </div>
+                    <div class="checkbox-group">
+                      <div class="checkbox-container">
+                        <input id="geometry-checkbox" type="checkbox" />
+                        <label for="geometry-checkbox">გეომეტრია</label>
+                      </div>
+                    </div>
+                  </ul>
                 </div>
                 <div class="checkbox-group">
                   <div class="checkbox-container">
@@ -244,7 +262,7 @@
                 </button>
               </li>
             </ul>
-            <span class="search-result-number">მოიძებნა N ტერმინი</span>
+            <span class="search-result-number">სულ დამატებულია N ტერმინი</span>
           </div>
         </section>
       </main>
@@ -330,7 +348,10 @@
                 alt="arrow"
               />
             </div>
-            <button class="filter-icon-container vector-button">
+            <button
+              class="filter-icon-container vector-button reset-filters-button"
+              title="ფილტრების გასუფთავება"
+            >
               <img src="/public/vectors/retry.svg" alt="reload" />
             </button>
           </div>
@@ -345,7 +366,7 @@
           </div>
           <ul class="checkbox-list level-1">
             <div class="checkbox-group">
-              <div class="checkbox-container">
+              <div class="checkbox-container active">
                 <input id="science-checkbox" type="checkbox" />
                 <label for="science-checkbox">მეცნიერება</label>
                 <button class="vector-button">
