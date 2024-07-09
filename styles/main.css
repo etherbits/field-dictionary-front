@@ -268,7 +268,6 @@ a {
   border: 1px solid rgb(var(--color-black));
   accent-color: rgb(var(--color-light-blue));
   cursor: pointer;
-  visibility: hidden;
 }
 
 .checkbox-container input:checked {
