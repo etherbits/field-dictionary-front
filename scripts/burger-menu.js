@@ -2,7 +2,7 @@
 function handleBurgerMenuGeneration() {
   const menu = document.querySelector('#burger-menu')
 
-  if (window.innerWidth > 1280) {
+  if (window.innerWidth > 768) {
     if (menu) {
       cleanUpBurgerMenu()
     }
@@ -34,7 +34,6 @@ window.onload = handleBurgerMenuGeneration
 window.onresize = handleBurgerMenuGeneration
 
 const links = [
-  { name: 'ლექსიკონი', link: '/' },
   { name: 'ლექსიკონის შესახებ', link: '/about.html' },
   { name: 'კონტაქტი', link: '/contact.html' },
 ]
@@ -48,7 +47,7 @@ function generateBurgerMenu() {
 				<img src="/public/vectors/close.svg" alt="close"/>
 			</button>
 			<nav>
-				${links.map((link) => `<a href="${link.link}">${link.name}</a>`).join('')}	
+				${links.map((link) => `<a href="${link.link}">${link.name}</a>`).join('<div class="burger-divider"></div>')}
 			</nav>
 		</section>
 	`

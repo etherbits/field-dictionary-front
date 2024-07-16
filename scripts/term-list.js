@@ -5,15 +5,26 @@ async function generateTermList() {
   const termCardHTMLs = []
 
   terms.forEach((term) => {
+    if (term.equivalent_word !== undefined) {
+      termCardHTMLs.push(`
+        <article class="term-card">
+          <div class="pair-line">
+            <a href="/term-detail.html" class="unstyled-link"><h3 class="word-pair">${term.word_en} - ${term.word_ka}</h3></a>
+            <span class="equivalent-word">(= <a href="/">${term.equivalent_word}</a>)</span>
+          </div>
+        </article>
+        `)
+      return
+    }
     termCardHTMLs.push(`
 			<article class="term-card">
 				<div class="field">
 				${term.fields
           .map((field) => {
             if (field.type == 'list') {
-              return field.list.map(
-                (field) => `<a href="${field.link}">${field.value}</a>`
-              ).join(", ")
+              return field.list
+                .map((field) => `<a href="${field.link}">${field.value}</a>`)
+                .join(', ')
             }
             return `<a href="${field.link}">${field.value}</a>`
           })
@@ -77,7 +88,7 @@ async function generateTermList() {
 						</div>
 				</section>
 				<section class="term-group" id="comment-${term.id}">
-					<h4 class="term-group-title">კომენტარი</h4>	
+					<h4 class="term-group-title">კომენტარი</h4>
 					<p class="term-group-text">${term.comment}</p>
 				</section>
 			</article>
@@ -96,22 +107,46 @@ async function generateTermList() {
       const termGroupId = button.id.replace('button-', '')
 
       if (termGroupId.startsWith('all-')) {
+        let isAllOpen = true
+        const buttonIds = []
+
         ;['definition', 'context', 'connected', 'comment'].forEach((group) => {
           const newButtonId = termGroupId.replace('all', group + '-button')
-          toggleGroupActive(newButtonId.replace('button-', ''), newButtonId)
+          const button = document.getElementById(newButtonId)
+
+          if (!button.classList.contains('active')) {
+            isAllOpen = false
+          }
+
+          buttonIds.push(newButtonId)
         })
+
+        buttonIds.forEach((buttonId) => toggleGroupActive(buttonId, !isAllOpen))
+        return
       }
-      toggleGroupActive(termGroupId, button.id)
+
+      toggleGroupActive(button.id)
     })
   })
 }
 
-function toggleGroupActive(termGroupId, buttonId) {
+function toggleGroupActive(buttonId, shouldOpen) {
   const button = document.getElementById(buttonId)
-  const termGroup = document.getElementById(termGroupId)
-  console.log(termGroupId, buttonId)
-  termGroup.classList.toggle('active')
-  button.classList.toggle('active')
+  const termGroup = document.getElementById(buttonId.replace('button-', ''))
+
+  if (shouldOpen === undefined) {
+    termGroup.classList.toggle('active')
+    button.classList.toggle('active')
+    return
+  }
+
+  if (shouldOpen && !button.classList.contains('active')) {
+    termGroup.classList.add('active')
+    button.classList.add('active')
+  } else if (!shouldOpen && button.classList.contains('active')) {
+    termGroup.classList.remove('active')
+    button.classList.remove('active')
+  }
 }
 
 async function fetchTempTermData() {

@@ -1,6 +1,6 @@
 .main-content {
   display: flex;
-  gap: 30px;
+  gap: 24px;
   justify-content: center;
 }
 
@@ -9,21 +9,29 @@
 }
 
 .search-controls {
-  display: none;
+  display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 24px;
+}
+
+#filter-modal {
+  width: 100%;
+  max-width: 410px;
 }
 
 .filter-modal-content {
   position: relative;
-  padding: 50px 60px;
+  padding: 40px 40px;
+  background-color: rgb(var(--color-white));
+  border: 1.2px solid rgb(var(--color-blue-2));
+  border-radius: 10px;
 }
 
 #filter-modal-close-button {
   position: absolute;
   top: 0;
   right: 0;
-  margin: 20px;
+  margin: 10px;
 }
 
 .filter-modal-toggle {
@@ -103,8 +111,23 @@ a {
 
 .term-card .word-pair {
   font-size: 18px;
-  font-weight: 600;
+  -webkit-text-stroke: 0.5px rgb(var(--color-blue-2));
+  font-weight: 400;
   color: rgb(var(--color-blue-2));
+}
+
+.term-card .pair-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.term-card .equivalent-word,
+.term-card .equivalent-word a {
+  color: rgb(var(--color-blue-1));
+  -webkit-text-stroke: 0.5px rgb(var(--color-blue-1));
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .term-card .word-type {
@@ -132,6 +155,14 @@ a {
   gap: 10px;
 }
 
+.term-button {
+  height: 24px;
+}
+
+.term-button svg {
+  height: 100%;
+}
+
 .term-button path {
   fill: rgb(var(--color-black));
   transition: 200ms ease-out;
@@ -141,7 +172,7 @@ a {
   stroke: rgb(var(--color-black));
 }
 
-.toggle-all-button{
+.toggle-all-button {
   margin-left: 16px;
 }
 
@@ -189,7 +220,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 324px;
+  max-width: 324px;
+  width: 100%;
 }
 
 .filter-group {
@@ -199,9 +231,17 @@ a {
   gap: 20px;
 }
 
+.filter-group input {
+  font-size: 14px;
+}
+
 .filter-icon-container {
   width: 20px;
-  height: 20px;
+  min-width: 20px;
+}
+
+.filter-icon-container img {
+  width: 100%;
 }
 
 .filter-help {
@@ -216,6 +256,10 @@ a {
 .select-container {
   position: relative;
   width: 100%;
+}
+
+.select {
+  font-size: 14px;
 }
 
 .select-container img {
@@ -239,7 +283,7 @@ a {
   gap: 4px;
 }
 
-.checkbox-list.level-3{
+.checkbox-list.level-3 {
   margin-left: 30px;
   margin-top: 4px;
   gap: 4px;
@@ -256,7 +300,7 @@ a {
   rotate: -90deg;
 }
 
-.checkbox-container.active .vector-button{
+.checkbox-container.active .vector-button {
   rotate: 0deg;
 }
 
@@ -296,7 +340,7 @@ a {
 }
 
 .checkbox-container label {
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -309,8 +353,12 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+  .main-content {
+    gap: 30px;
+  }
+
   .search-controls {
-    display: flex;
+    gap: 30px;
   }
 
   #term-list {
@@ -330,6 +378,11 @@ a {
     font-size: 24px;
   }
 
+  .term-card .equivalent-word,
+  .term-card .equivalent-word a {
+    font-size: 24px;
+  }
+
   .term-card .word-type {
     font-size: 16px;
   }
@@ -344,6 +397,30 @@ a {
 
   .term-group-title {
     font-size: 16px;
+  }
+
+  .filter-modal-content {
+    padding: 60px 80px;
+  }
+
+  .checkbox-container label {
+    font-size: 18px;
+  }
+
+  #filter-modal-close-button {
+    margin: 30px 40px;
+  }
+
+  .select {
+    font-size: 18px;
+  }
+
+  .filter-group input {
+    font-size: 18px;
+  }
+
+  #filter-modal {
+    max-width: 525px;
   }
 }
 
