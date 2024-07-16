@@ -82,14 +82,23 @@ h6 {
   isolation: isolate;
 }
 
-/* @font-face { */
-/*     font-family: 'DejaVu Sans'; */
-/*     src: url('/public/fonts/dejavu-sans-webfont.woff2'); */
-/* } */
+@font-face {
+  font-family: 'DejaVu Sans Condensed';
+  src: url('/public/fonts/dejavu-sans-condensed-webfont.eot'); /* IE9 Compat Modes */
+  src:
+    url('/public/fonts/dejavu-sans-condensed-webfont.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('/public/fonts/dejavu-sans-condensed-webfont.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('/public/fonts/dejavu-sans-condensed-webfont.woff') format('woff'),
+    /* Pretty Modern Browsers */
+      url('/public/fonts/dejavu-sans-condensed-webfont.ttf') format('truetype');
+}
 
 * {
   color: rgb(var(--color-black));
-  font-family: 'Noto Sans Georgian', sans-serif;
+  font-family: 'DejaVu Sans Condensed', sans-serif;
 }
 
 body {
