@@ -1,6 +1,17 @@
+.edge-padding {
+  padding: 10px 20px;
+}
+
 .header {
   background: rgb(var(--color-light-blue));
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
+
+.header .logo {
+  height: 42px;
+}
+
 
 .header-content {
   display: flex;
@@ -114,9 +125,6 @@
   height: 2px;
 }
 
-.edge-padding {
-  padding: 10px 20px;
-}
 
 .main-outer {
   padding-top: 60px;
@@ -471,8 +479,13 @@ dialog .info-text {
     color: rgb(var(--color-blue-2));
   }
 
+  .header {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
   .header .logo {
-    height: 71px;
+    height: 58px;
   }
 
   .edge-padding {
@@ -527,6 +540,15 @@ dialog .info-text {
 }
 
 @media screen and (min-width: 1280px) {
+  .header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .header .logo {
+    height: 62px;
+  }
+
   .main-outer {
     padding-bottom: 200px;
   }
