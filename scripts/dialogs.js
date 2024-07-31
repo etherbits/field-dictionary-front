@@ -22,27 +22,34 @@ dialogs.forEach((dialog) =>
 )
 
 const subscribeForm = document.querySelector('#subscribe-form')
+const emailInput = subscribeForm.querySelector('input')
 const successDialog = document.querySelector('#success-modal')
 const errorDialog = document.querySelector('#error-modal')
 const errorDialogCloseButton = document.querySelector(
   '#error-modal-close-button'
 )
 
-let didSubmit = false
+let submitStatus = "error"
 
 subscribeForm.addEventListener('submit', (e) => {
   e.preventDefault()
-  didSubmit = true
+  if(emailInput.value.length === 0){
+    submitStatus = "empty"
+  }else{
+    submitStatus = "sent"
+  }
 })
 
 const subscribeButton = subscribeForm.querySelector('button')
-subscribeButton.addEventListener('mousedown', () => {
-  didSubmit = false
+subscribeButton.addEventListener('click', () => {
+  submitStatus = "error"
   setTimeout(() => {
-    if (didSubmit) {
+    if (submitStatus === "sent") {
       successDialog.showModal()
-    } else {
+    } else if (submitStatus === "error") {
       errorDialog.showModal()
+    }else{
+      emailInput.focus()
     }
   }, 200)
 })

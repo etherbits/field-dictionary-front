@@ -77,7 +77,7 @@ async function generateTermList() {
 					</button>
 				</section>
 				<section class="term-group" id="definition-${term.id}">
-					<h4 class="term-group-title">განსაზღვრება</h4>
+					<h4 class="term-group-title">განმარტება</h4>
 					<p class="term-group-text">${term.definition}</p>
 				</section>
 				<section class="term-group" id="context-${term.id}">

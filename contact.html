@@ -49,14 +49,14 @@
           <label for="contact-email">ელ. ფოსტა</label>
           <div class="base-field contact-field input-container errorable-field">
             <input class="contact-input field-input" name="email" type="email" required />
-            <span>მითიტებული ელ.ფოსტა არასწორია</span>
+            <span class="email-error">შეავსეთ ველი</span>
           </div>
         </div>
         <div class="input-group">
           <label for="contact-text">თემა/სათაური</label>
           <div class="base-field contact-field input-container errorable-field">
             <input class="contact-input field-input" name="subject" required />
-            <span>შეიყვანეთ თემა</span>
+            <span>შეავსეთ ველი</span>
           </div>
         </div>
         <div class="input-group">
@@ -77,7 +77,7 @@
       <div class="sub-group">
         <label class="sub-label">გამოიწერეთ სიახლეები:</label>
         <form class="base-field sub-input-container errorable-field" id="subscribe-form">
-          <input class="sub-input field-input" type="email" placeholder="ელ. ფოსტა" required />
+          <input class="sub-input field-input" type="email" placeholder="ელ. ფოსტა" />
           <button class="sub-button">
             <svg class="sub-button-img" width="24" height="24" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg">
