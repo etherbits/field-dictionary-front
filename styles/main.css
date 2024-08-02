@@ -305,6 +305,7 @@ a {
 }
 
 .checkbox-container input {
+  appearance: none;
   position: relative;
   width: 20px;
   height: 20px;
