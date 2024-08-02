@@ -454,13 +454,25 @@ dialog[open]::backdrop {
   gap: 30px;
   background: rgb(var(--color-light-blue));
   align-items: center;
-  padding: 40px 26px;
+  padding: 40px 25px;
   border-radius: 16px;
+}
+
+.info-modal-content .base-button{
+  min-width: auto;
+  width: 100%;
 }
 
 dialog .info-text {
   font-size: 18px;
   color: rgb(var(--color-black));
+}
+
+@media screen and (min-width: 390px){
+  .info-modal-content .base-button{
+    min-width: 270px;
+    width: fit-content;
+  }
 }
 
 @media screen and (min-width: 768px) {
