@@ -306,6 +306,8 @@ a {
 
 .checkbox-container input {
   appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   position: relative;
   width: 20px;
   height: 20px;
