@@ -436,6 +436,11 @@ dialog[open]::backdrop {
   background-color: rgb(var(--color-white));
   border: 1px solid rgb(var(--color-light-blue-2));
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.secondary-button:focus {
+  border: 1px solid rgba(var(--color-blue), 0.75);
 }
 
 .secondary-button:active {
