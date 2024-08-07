@@ -463,7 +463,7 @@ dialog[open]::backdrop {
   border-radius: 16px;
 }
 
-.info-modal-content .base-button{
+.info-modal-content .base-button {
   min-width: auto;
   width: 100%;
 }
@@ -473,14 +473,19 @@ dialog .info-text {
   color: rgb(var(--color-black));
 }
 
-@media screen and (min-width: 390px){
-  .info-modal-content .base-button{
-    min-width: 270px;
+@media screen and (min-width: 338px) {
+  .info-modal-content .base-button {
+    min-width: 248px;
     width: fit-content;
   }
 }
 
 @media screen and (min-width: 768px) {
+  .info-modal-content .base-button {
+    min-width: 270px;
+    width: fit-content;
+  }
+
   #menu-button {
     display: none;
   }
