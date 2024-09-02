@@ -34,6 +34,24 @@
       "<p>Smith, J. (2020). <a href='/'>The art of coding</a>. TechBooks Publishing.</p>",
       "<p>Smith, J. (2020). <a href='/'>The art of coding</a>. TechBooks Publishing.</p>"
     ],
+    "synonyms": [
+      {
+        "value": "სინონიმი 1",
+        "link": "/"
+      },
+      {
+        "value": "სინონიმი 2",
+        "link": "/"
+      },
+      {
+        "value": "სინონიმი 3",
+        "link": "/"
+      },
+      {
+        "value": "სინონიმი 4",
+        "link": "/"
+      }
+    ],
     "connected_terms": [
       {
         "value": "მარჯნის რიფები",
@@ -89,6 +107,24 @@
       "<p>Smith, J. (2020). <a href='/'>The art of coding</a>. TechBooks Publishing.</p>",
       "<p>Smith, J. (2020). <a href='/'>The art of coding</a>. TechBooks Publishing.</p>"
     ],
+    "synonyms": [
+      {
+        "value": "სინონიმი 1",
+        "link": "/"
+      },
+      {
+        "value": "სინონიმი 2",
+        "link": "/"
+      },
+      {
+        "value": "სინონიმი 3",
+        "link": "/"
+      },
+      {
+        "value": "სინონიმი 4",
+        "link": "/"
+      }
+    ],
     "connected_terms": [
       {
         "value": "მარჯნის რიფები",
@@ -143,6 +179,24 @@
     "context_sources": [
       "<p>Smith, J. (2020). <a href='/'>The art of coding</a>. TechBooks Publishing.</p>",
       "<p>Smith, J. (2020). <a href='/'>The art of coding</a>. TechBooks Publishing.</p>"
+    ],
+    "synonyms": [
+      {
+        "value": "სინონიმი 1",
+        "link": "/"
+      },
+      {
+        "value": "სინონიმი 2",
+        "link": "/"
+      },
+      {
+        "value": "სინონიმი 3",
+        "link": "/"
+      },
+      {
+        "value": "სინონიმი 4",
+        "link": "/"
+      }
     ],
     "connected_terms": [
       {
