@@ -155,6 +155,10 @@ a {
   gap: 10px;
 }
 
+.nested-term-group {
+  gap: 20px;
+}
+
 .term-button {
   height: 24px;
 }
@@ -168,8 +172,32 @@ a {
   transition: 200ms ease-out;
 }
 
+.term-button.active path {
+  fill: rgb(var(--color-blue));
+}
+
+.term-button:hover path {
+  fill: rgb(var(--color-light-blue-2));
+}
+
+.term-button:disabled path {
+  fill: rgba(var(--color-black), 0.4);
+}
+
 .term-button .svg-outline path {
   stroke: rgb(var(--color-black));
+}
+
+.term-button.active .svg-outline path {
+  stroke: rgb(var(--color-blue));
+}
+
+.term-button:hover .svg-outline path {
+  stroke: rgb(var(--color-light-blue));
+}
+
+.term-button:disabled .svg-outline path {
+  stroke: rgba(var(--color-black), 0.4);
 }
 
 .toggle-all-button {
@@ -178,22 +206,6 @@ a {
 
 .term-group.active {
   display: flex;
-}
-
-.term-button.active path {
-  fill: rgb(var(--color-blue));
-}
-
-.term-button.active .svg-outline path {
-  stroke: rgb(var(--color-blue));
-}
-
-.term-button:hover path {
-  fill: rgb(var(--color-light-blue-2));
-}
-
-.term-button:hover .svg-outline path {
-  stroke: rgb(var(--color-light-blue));
 }
 
 .term-group-title {
