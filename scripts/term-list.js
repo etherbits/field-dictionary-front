@@ -71,18 +71,26 @@ async function generateTermList() {
 				<section class="term-group" id="definition-${term.id}">
 					<h4 class="term-group-title">განმარტება</h4>
 					<p class="term-group-text">${term.definition}</p>
+					<div class="term-group-sources">
+						<span class="context-label">განმარტების წყარო:</span>
+						${term.definition_sources
+              .map(
+                (source) => `<div class="term-context-source">${source}</div>`
+              )
+              .join('')}
+					</div>
 				</section>
 				<section class="term-group" id="context-${term.id}">
 					<h4 class="term-group-title">კონტექსტი</h4>
 					<p class="term-group-text">${term.context}</p>
-						<div class="term-group-sources">
-							<span class="context-label">კონტექსტის წყარო:</span>
-							${term.context_sources
-                .map(
-                  (source) => `<div class="term-context-source">${source}</div>`
-                )
-                .join('')}
-						</div>
+					<div class="term-group-sources">
+						<span class="context-label">კონტექსტის წყარო:</span>
+						${term.context_sources
+              .map(
+                (source) => `<div class="term-context-source">${source}</div>`
+              )
+              .join('')}
+					</div>
 				</section>
 				<section class="term-group" id="connected-${term.id}">
 					<h4 class="term-group-title">სინონიმები</h4>
