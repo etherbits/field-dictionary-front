@@ -12,7 +12,6 @@
   height: 42px;
 }
 
-
 .header-content {
   display: flex;
   justify-content: space-between;
@@ -126,7 +125,6 @@
   height: 2px;
 }
 
-
 .main-outer {
   padding-top: 60px;
   padding-bottom: 100px;
@@ -236,6 +234,7 @@
 
 .pagination {
   display: flex;
+  gap: 4px;
   margin: 0 auto;
   width: fit-content;
 }
@@ -257,6 +256,12 @@
 
 .pagination button:hover {
   background-color: rgb(var(--color-gray-2));
+}
+
+.pagination button:disabled {
+  background-color: rgb(var(--color-white));
+  opacity: 0.7;
+  cursor: default;
 }
 
 /*   Closed state of the dialog   */
@@ -496,10 +501,19 @@ dialog .info-text {
   }
 
   .desktop-nav a {
+    transition: all 150ms;
     text-decoration: none;
-    -webkit-text-stroke: 0.3px rgb(var(--color-blue-2));
     font-size: 20px;
+    -webkit-text-stroke: 0.3px rgb(var(--color-blue-2));
     color: rgb(var(--color-blue-2));
+  }
+
+  .desktop-nav a:hover {
+    -webkit-text-stroke: 0.5px rgb(var(--color-blue-2));
+  }
+
+  .desktop-nav .active-nav-link {
+    -webkit-text-stroke: 0.7px rgb(var(--color-blue-2));
   }
 
   .header {
@@ -522,6 +536,10 @@ dialog .info-text {
 
   .search-result-number {
     font-size: 18px;
+  }
+
+  .pagination {
+    gap: 6px;
   }
 
   .footer {
@@ -586,6 +604,7 @@ dialog .info-text {
 
   .pagination {
     margin-left: 0;
+    gap: 8px;
   }
 
   .footer {
