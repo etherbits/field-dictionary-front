@@ -289,6 +289,18 @@ a {
   gap: 10px;
 }
 
+.checkbox-group > .checkbox-list {
+  display: none;
+}
+
+.checkbox-group.open > .checkbox-list {
+  display: flex;
+}
+
+.checkbox-group.open > .checkbox-container .vector-button {
+  rotate: 0deg;
+}
+
 .checkbox-list.level-2 {
   margin-left: 30px;
   margin-top: 10px;
@@ -310,10 +322,6 @@ a {
 .checkbox-container .vector-button {
   margin-left: auto;
   rotate: -90deg;
-}
-
-.checkbox-container.active .vector-button {
-  rotate: 0deg;
 }
 
 .checkbox-container input {

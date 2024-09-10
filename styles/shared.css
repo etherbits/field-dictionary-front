@@ -62,11 +62,15 @@
 }
 
 .vector-button:hover {
-  filter: invert(0.15);
+  filter: invert(0.2);
 }
 
 .vector-button:active {
-  filter: invert(0.3);
+  filter: invert(0.4);
+}
+
+.vector-button:disabled {
+  filter: invert(0);
 }
 
 #burger-menu {
