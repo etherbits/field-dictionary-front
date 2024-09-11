@@ -114,7 +114,9 @@ a {
   font-weight: 400;
   -webkit-text-stroke: 0.5px rgb(var(--color-blue-2));
   color: rgb(var(--color-blue-2));
-  transition: all 150ms;
+  transition:
+    color 150ms,
+    -webkit-text-stroke 150ms;
 }
 
 .term-card .word-pair:hover {
@@ -342,17 +344,13 @@ a {
   cursor: pointer;
 }
 
-.checkbox-container input:checked {
-  background: rgb(var(--color-black));
-}
-
-.checkbox-container input::after {
+.checkbox-container input::before {
   content: '';
   display: block;
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  border: 1px solid rgb(var(--color-black));
+  border: 1px solid rgb(var(--color-light-blue-2));
   background-color: rgb(var(--color-white));
   position: absolute;
   top: 0;
@@ -363,8 +361,23 @@ a {
   visibility: visible;
 }
 
+.checkbox-container input::after {
+  position: absolute;
+  /* Not quite in the center like in the design*/
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-110%);
+  content: url('/public/vectors/check.svg');
+  width: 15px;
+  height: 11px;
+  background-color: transparent;
+  border: none;
+  opacity: 0;
+  transition: opacity 150ms;
+}
+
 .checkbox-container input:checked::after {
-  background-color: rgb(var(--color-light-blue-2));
+  opacity: 1;
 }
 
 .checkbox-container label {
