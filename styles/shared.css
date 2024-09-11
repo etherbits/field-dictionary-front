@@ -89,7 +89,7 @@
   content: attr(data-tooltip);
   background: rgb(var(--color-white));
   border: solid 1px rgb(var(--color-gray));
-  width: max-content;
+  width: 0;
   max-width: 390px;
   font-size: 14px;
   z-index: 10;
@@ -100,7 +100,6 @@
   opacity: 0;
   pointer-events: none;
   color: rgb(var(--color-black));
-  transition: opacity 150ms;
   overflow: hidden;
 }
 
@@ -114,6 +113,7 @@
 
 .tooltip:hover::after {
   opacity: 1;
+  width: max-content;
 }
 
 #burger-menu {
