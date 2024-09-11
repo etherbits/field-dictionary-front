@@ -169,6 +169,7 @@ a {
 
 .term-button {
   height: 24px;
+  cursor: pointer;
 }
 
 .term-button svg {
