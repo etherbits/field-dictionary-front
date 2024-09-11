@@ -111,9 +111,15 @@ a {
 
 .term-card .word-pair {
   font-size: 18px;
-  -webkit-text-stroke: 0.5px rgb(var(--color-blue-2));
   font-weight: 400;
+  -webkit-text-stroke: 0.5px rgb(var(--color-blue-2));
   color: rgb(var(--color-blue-2));
+  transition: all 150ms;
+}
+
+.term-card .word-pair:hover {
+  -webkit-text-stroke: 0.5px rgb(var(--color-blue-1));
+  color: rgb(var(--color-blue-1));
 }
 
 .term-card .pair-line {

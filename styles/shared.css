@@ -73,6 +73,33 @@
   filter: invert(0);
 }
 
+.tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  position: absolute;
+  display: block;
+  content: attr(data-tooltip);
+  background: rgba(255, 255, 255, 0.7);
+  border: solid 1px rgb(var(--color-light-blue));
+  backdrop-filter: blur(8px);
+  width: max-content;
+  z-index: 10;
+  left: 50%;
+  top: calc(100% + 6px);
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  color: rgb(var(--color-black));
+  transition: opacity 150ms;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+}
+
 #burger-menu {
   position: fixed;
   display: flex;
@@ -221,6 +248,14 @@
 
 .footer .partner-logo {
   height: 40px;
+}
+
+.footer .partner-logo * {
+  transition: all 150ms;
+}
+
+.footer .partner-logo:hover * {
+  fill: rgb(var(--color-blue-2));
 }
 
 .term-list-bottom-bar {
@@ -510,14 +545,17 @@ dialog .info-text {
     font-size: 20px;
     -webkit-text-stroke: 0.3px rgb(var(--color-blue-2));
     color: rgb(var(--color-blue-2));
+    transition: all 150ms;
   }
 
   .desktop-nav a:hover {
-    -webkit-text-stroke: 0.5px rgb(var(--color-blue-2));
+    -webkit-text-stroke: 0.3px rgb(var(--color-blue-1));
+    color: rgb(var(--color-blue-1));
   }
 
   .desktop-nav .active-nav-link {
-    -webkit-text-stroke: 0.7px rgb(var(--color-blue-2));
+    -webkit-text-stroke: 0.6px rgb(var(--color-blue-2));
+    color: rgb(var(--color-blue-2));
   }
 
   .header {
