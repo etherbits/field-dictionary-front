@@ -38,3 +38,20 @@ contactFields.forEach((field) => {
 if (contactSubmitBtn) {
   enableSubmitOnAllFilled()
 }
+
+const subjectField = document.querySelector(
+  '#contact-form input[name="subject"]'
+)
+
+if (subjectField) {
+  addInitialSubject()
+}
+
+function addInitialSubject() {
+  const searchParams = new URLSearchParams(window.location.search)
+  const initialSubject = searchParams.get('subject')
+
+  if (!initialSubject) return
+
+  subjectField.value = initialSubject
+}
