@@ -30,9 +30,11 @@ function enableSubmitOnAllFilled() {
   contactSubmitBtn.disabled = !allFieldsFilled
 }
 
-enableSubmitOnAllFilled()
-
 contactFields.forEach((field) => {
   field.addEventListener('blur', enableSubmitOnAllFilled)
   field.addEventListener('keyup', enableSubmitOnAllFilled)
 })
+
+if (contactSubmitBtn) {
+  enableSubmitOnAllFilled()
+}

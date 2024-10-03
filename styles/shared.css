@@ -294,7 +294,8 @@
   width: fit-content;
 }
 
-.pagination button {
+.pagination .pagination-link {
+  all: unset;
   display: flex;
   background-color: rgb(var(--color-white));
   width: 32px;
@@ -303,20 +304,22 @@
   justify-content: center;
   font-size: 18px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
-.pagination button.active {
+.pagination .pagination-link.active {
   background-color: rgb(var(--color-light-blue));
 }
 
-.pagination button:hover {
+.pagination .pagination-link:hover {
   background-color: rgb(var(--color-gray-2));
 }
 
-.pagination button:disabled {
+.pagination .pagination-link.disabled {
   background-color: rgb(var(--color-white));
   opacity: 0.7;
   cursor: default;
+  pointer-events: none;
 }
 
 /*   Closed state of the dialog   */
@@ -629,7 +632,7 @@ dialog .info-text {
     font-size: 18px;
   }
 
-  .pagination button {
+  .pagination .pagination-link {
     width: 45px;
     height: 45px;
   }
