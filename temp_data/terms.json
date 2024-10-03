@@ -180,6 +180,36 @@
   },
   {
     "id": "d76a65d6-0546-4ba1-bbed-7078e1ef3bf5",
+    "fields": [
+      {
+        "value": "გეოგრაფია",
+        "link": "?field=გეოგრაფია"
+      },
+      {
+        "value": "ფიზიკური გეოგრაფია",
+        "link": "?field=ფიზიკური გეოგრაფია"
+      },
+      {
+        "type": "list",
+        "list": [
+          {
+            "value": "კლიმატი",
+            "link": "?field=კლიმატი"
+          },
+          {
+            "value": "ეკოლოგია",
+            "link": "?field=ეკოლოგია"
+          }
+        ]
+      }
+    ],
+    "word_ka": "არქიპელაგი",
+    "word_en": "Archipelago",
+    "type": "არსებითი სახელი",
+    "source": " Smith, J. (2020). <a href='/'>The art of coding</a>. TechBooks Publishing."
+  },
+  {
+    "id": "d76a65d6-0546-4ba1-bbed-7078e1ef3bf5",
     "word_ka": "არქიპელაგი",
     "word_en": "Archipelago",
     "equivalent_word": "კუნძული"

@@ -15,3 +15,24 @@ errorableFields.forEach((field) => {
     }
   })
 })
+
+const contactFields = document.querySelectorAll(
+  '#contact-form input, #contact-form textarea'
+)
+const contactSubmitBtn = document.querySelector(
+  '#contact-form button[type="submit"]'
+)
+
+function enableSubmitOnAllFilled() {
+  const allFieldsFilled = [...contactFields].every(
+    (field) => field.value.length > 0
+  )
+  contactSubmitBtn.disabled = !allFieldsFilled
+}
+
+enableSubmitOnAllFilled()
+
+contactFields.forEach((field) => {
+  field.addEventListener('blur', enableSubmitOnAllFilled)
+  field.addEventListener('keyup', enableSubmitOnAllFilled)
+})

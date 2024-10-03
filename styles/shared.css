@@ -490,6 +490,7 @@ dialog[open]::backdrop {
 .base-button:disabled {
   background-color: rgb(var(--color-gray-2));
   color: rgb(var(--color-black));
+  cursor: default;
 }
 
 .secondary-button {
