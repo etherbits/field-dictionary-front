@@ -15,24 +15,3 @@ errorableFields.forEach((field) => {
     }
   })
 })
-
-const checkboxGroups = document.querySelectorAll('.checkbox-group')
-
-checkboxGroups.forEach((checkboxGroup) => {
-  const arrowBtn = checkboxGroup.querySelector(
-    '.checkbox-container > .vector-button'
-  )
-
-  if (!arrowBtn) return
-
-  const checkboxList = checkboxGroup.querySelector('.checkbox-list')
-
-  if (!checkboxList) {
-    arrowBtn.disabled = true
-    return
-  }
-
-  arrowBtn.addEventListener('click', () => {
-    checkboxGroup.classList.toggle('open')
-  })
-})
