@@ -13,7 +13,7 @@ showButton?.addEventListener('click', toggleFilterModal)
 // "Close" button closes the dialog
 closeButton?.addEventListener('click', toggleFilterModal)
 
-filterModal.addEventListener('mousedown', (e) => {
+filterModal?.addEventListener('mousedown', (e) => {
   if (e.target === filterModal) {
     toggleFilterModal()
   }
@@ -74,6 +74,7 @@ const errorDialogCloseButtonContact = document.querySelector(
 let didSubmitContact = false
 
 contactForm?.addEventListener('submit', (e) => {
+  console.log('submiti')
   e.preventDefault()
   didSubmitContact = true
 })
