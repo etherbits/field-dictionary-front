@@ -102,6 +102,7 @@ function setFilterLabels() {
   const topLevelFilterData = getTopLevelFilterData()
 
   filterLabelSlot.innerHTML = topLevelFilterData
+    .sort((a, b) => a.label.localeCompare(b.label)) // Sorting alphabetically
     .map(
       (filterData) => `
               <li class="selected-filter-item">
