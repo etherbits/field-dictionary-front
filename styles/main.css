@@ -362,7 +362,7 @@ a {
   opacity: 1;
   transition: 200ms ease-out;
   pointer-events: all;
-  visibility: visible;
+  visibility: inherit;
 }
 
 .checkbox-container input::after {
@@ -402,13 +402,15 @@ a {
   align-items: center;
   padding: 20px;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 250ms;
+  transition:
+    visibility 250ms,
+    opacity 250ms;
+  visibility: hidden;
 }
 
 .filter-content-backdrop.open {
+  visibility: visible;
   opacity: 1;
-  pointer-events: all;
 }
 
 .filter-content-container {
@@ -520,7 +522,7 @@ a {
     z-index: 1;
     padding: 0;
     opacity: 1;
-    pointer-events: all;
+    visibility: visible;
   }
 
   .filter-content-container {
