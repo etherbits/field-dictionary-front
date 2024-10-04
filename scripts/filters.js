@@ -18,7 +18,10 @@ function makeFiltersResetable() {
   resetFiltersButton?.addEventListener('click', () => {
     const checkboxes = filterContent.querySelectorAll('input[type=checkbox]')
 
-    checkboxes.forEach((checkbox) => (checkbox.checked = 0))
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = 0
+      checkbox.dispatchEvent(new Event('update'))
+    })
   })
 }
 
