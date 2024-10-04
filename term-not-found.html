@@ -10,6 +10,7 @@
     <link href="styles/main.css" rel="stylesheet" />
     <script src="/scripts/burger-menu.js" defer></script>
     <script src="/scripts/fields.js" defer></script>
+    <script src="/scripts/filters.js" defer></script>
     <script src="/scripts/dialogs.js" defer></script>
   </head>
   <body>
@@ -29,87 +30,124 @@
     </header>
     <div class="main-outer edge-padding">
       <main class="main-content width-limiter">
-        <section id="filter-content" class="filter-content">
-          <div class="filter-group">
-            <div class="select-container">
-              <select name="sorting" class="select base-field">
-                <option value="">სორტირება</option>
-                <option value="en">A-დან Z-მდე</option>
-                <option value="ka">ა-დან ჰ-მდე</option>
-                <option value="recent">ბოლოს დამატებული</option>
-              </select>
-              <img
-                class="select-arrow"
-                src="/public/vectors/down.svg"
-                alt="arrow"
-              />
-            </div>
-            <div
-              class="fit-container tooltip"
-              data-tooltip="ფილტრების გასუფთავება"
-            >
-              <button
-                class="filter-icon-container vector-button reset-filters-button"
-              >
-                <img src="/public/vectors/retry.svg" alt="reload" />
-              </button>
-            </div>
-          </div>
-          <div class="filter-group">
-            <input class="base-field" placeholder="აკრიფე ასო" />
-            <div
-              class="filter-icon-container filter-help tooltip"
-              data-tooltip="ამ ველში ჩაწერილი ასოთი/ასოებით დაიწყება ტერმინები"
-            >
-              <img src="/public/vectors/question.svg" alt="question" />
-            </div>
-          </div>
-          <ul class="checkbox-list level-1">
-            <div class="checkbox-group">
-              <div class="checkbox-container active">
-                <input id="science-checkbox-desktop" type="checkbox" />
-                <label for="science-checkbox-desktop">მეცნიერება</label>
-                <button class="vector-button">
-                  <img src="/public/vectors/down.svg" alt="arrow down" />
-                </button>
+        <div id="filter-content-backdrop" class="filter-content-backdrop">
+          <div class="filter-content-container">
+            <button id="filter-modal-close-button" class="vector-button">
+              <img src="/public/vectors/x.svg" alt="close" />
+            </button>
+            <section class="filter-content">
+              <div class="filter-group">
+                <div class="select-container">
+                  <select name="sorting" class="select base-field">
+                    <option value="">სორტირება</option>
+                    <option value="en">A-დან Z-მდე</option>
+                    <option value="ka">ა-დან ჰ-მდე</option>
+                    <option value="recent">ბოლოს დამატებული</option>
+                  </select>
+                  <img
+                    class="select-arrow"
+                    src="/public/vectors/down.svg"
+                    alt="arrow"
+                  />
+                </div>
+                <div
+                  class="fit-container tooltip"
+                  data-tooltip="ფილტრების გასუფთავება"
+                >
+                  <button
+                    class="filter-icon-container vector-button reset-filters-button"
+                  >
+                    <img src="/public/vectors/retry.svg" alt="reload" />
+                  </button>
+                </div>
               </div>
-              <ul class="checkbox-list level-2">
+              <div class="filter-group">
+                <input class="base-field" placeholder="აკრიფე ასო" />
+                <div
+                  class="filter-icon-container filter-help tooltip"
+                  data-tooltip="ამ ველში ჩაწერილი ასოთი/ასოებით დაიწყება ტერმინები"
+                >
+                  <img src="/public/vectors/question.svg" alt="arrow down" />
+                </div>
+              </div>
+              <ul class="checkbox-list level-1">
                 <div class="checkbox-group">
                   <div class="checkbox-container">
-                    <input id="physics-checkbox-desktop" type="checkbox" />
-                    <label for="physics-checkbox-desktop">ფიზიკა</label>
+                    <input id="science-checkbox" type="checkbox" />
+                    <label for="science-checkbox">მეცნიერება</label>
                     <button class="vector-button">
                       <img src="/public/vectors/down.svg" alt="arrow down" />
                     </button>
                   </div>
-                </div>
-                <div class="checkbox-group">
-                  <div class="checkbox-container active">
-                    <input id="math-checkbox-desktop" type="checkbox" />
-                    <label for="math-checkbox-desktop">მათემატიკა</label>
-                    <button class="vector-button">
-                      <img src="/public/vectors/down.svg" alt="arrow down" />
-                    </button>
-                  </div>
-                  <ul class="checkbox-list level-3">
+                  <ul class="checkbox-list level-2">
                     <div class="checkbox-group">
                       <div class="checkbox-container">
-                        <input id="algebra-checkbox" type="checkbox" />
-                        <label for="algebra-checkbox">ალგებრა</label>
+                        <input id="physics-checkbox" type="checkbox" />
+                        <label for="physics-checkbox">ფიზიკა</label>
+                        <button class="vector-button">
+                          <img
+                            src="/public/vectors/down.svg"
+                            alt="arrow down"
+                          />
+                        </button>
                       </div>
                     </div>
                     <div class="checkbox-group">
                       <div class="checkbox-container">
-                        <input id="geometry-checkbox" type="checkbox" />
-                        <label for="geometry-checkbox">გეომეტრია</label>
+                        <input id="math-checkbox" type="checkbox" />
+                        <label for="math-checkbox">მათემატიკა</label>
+                        <button class="vector-button">
+                          <img
+                            src="/public/vectors/down.svg"
+                            alt="arrow down"
+                          />
+                        </button>
+                      </div>
+                      <ul class="checkbox-list level-3">
+                        <div class="checkbox-group">
+                          <div class="checkbox-container">
+                            <input id="algebra-checkbox" type="checkbox" />
+                            <label for="algebra-checkbox">ალგებრა</label>
+                          </div>
+                        </div>
+                        <div class="checkbox-group">
+                          <div class="checkbox-container">
+                            <input id="geometry-checkbox" type="checkbox" />
+                            <label for="geometry-checkbox">გეომეტრია</label>
+                          </div>
+                        </div>
+                      </ul>
+                    </div>
+                    <div class="checkbox-group">
+                      <div class="checkbox-container">
+                        <input id="chemistry-checkbox" type="checkbox" />
+                        <label for="chemistry-checkbox">ქიმია</label>
+                        <button class="vector-button">
+                          <img
+                            src="/public/vectors/down.svg"
+                            alt="arrow down"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                    <div class="checkbox-group">
+                      <div class="checkbox-container">
+                        <input id="geography-checkbox" type="checkbox" />
+                        <label for="geography-checkbox">გეოგრაფია</label>
+                        <button class="vector-button">
+                          <img
+                            src="/public/vectors/down.svg"
+                            alt="arrow down"
+                          />
+                        </button>
                       </div>
                     </div>
                   </ul>
                 </div>
                 <div class="checkbox-group">
                   <div class="checkbox-container">
-                    <input id="chemistry-checkbox-desktop" type="checkbox" />
-                    <label for="chemistry-checkbox-desktop">ქიმია</label>
+                    <input id="tech-checkbox" type="checkbox" />
+                    <label for="tech-checkbox">ტექნიკა</label>
                     <button class="vector-button">
                       <img src="/public/vectors/down.svg" alt="arrow down" />
                     </button>
@@ -117,63 +155,47 @@
                 </div>
                 <div class="checkbox-group">
                   <div class="checkbox-container">
-                    <input id="geography-checkbox-desktop" type="checkbox" />
-                    <label for="geography-checkbox-desktop">გეოგრაფია</label>
+                    <input id="nature-checkbox" type="checkbox" />
+                    <label for="nature-checkbox">ბუნება</label>
+                    <button class="vector-button">
+                      <img src="/public/vectors/down.svg" alt="arrow down" />
+                    </button>
+                  </div>
+                </div>
+                <div class="checkbox-group">
+                  <div class="checkbox-container">
+                    <input id="literature-checkbox" type="checkbox" />
+                    <label for="literature-checkbox">ლიტერატურა</label>
+                    <button class="vector-button">
+                      <img src="/public/vectors/down.svg" alt="arrow down" />
+                    </button>
+                  </div>
+                </div>
+                <div class="checkbox-group">
+                  <div class="checkbox-container">
+                    <input id="fantasy-checkbox" type="checkbox" />
+                    <label for="fantasy-checkbox">ფენტეზი</label>
+                    <button class="vector-button">
+                      <img src="/public/vectors/down.svg" alt="arrow down" />
+                    </button>
+                  </div>
+                </div>
+                <div class="checkbox-group">
+                  <div class="checkbox-container">
+                    <input id="astrology-checkbox" type="checkbox" />
+                    <label for="astrology-checkbox">ასტროლოგია</label>
                     <button class="vector-button">
                       <img src="/public/vectors/down.svg" alt="arrow down" />
                     </button>
                   </div>
                 </div>
               </ul>
-            </div>
-            <div class="checkbox-group">
-              <div class="checkbox-container">
-                <input id="tech-checkbox-desktop" type="checkbox" />
-                <label for="tech-checkbox-desktop">ტექნიკა</label>
-                <button class="vector-button">
-                  <img src="/public/vectors/down.svg" alt="arrow down" />
-                </button>
-              </div>
-            </div>
-            <div class="checkbox-group">
-              <div class="checkbox-container">
-                <input id="nature-checkbox-desktop" type="checkbox" />
-                <label for="nature-checkbox-desktop">ბუნება</label>
-                <button class="vector-button">
-                  <img src="/public/vectors/down.svg" alt="arrow down" />
-                </button>
-              </div>
-            </div>
-            <div class="checkbox-group">
-              <div class="checkbox-container">
-                <input id="literature-checkbox-desktop" type="checkbox" />
-                <label for="literature-checkbox-desktop">ლიტერატურა</label>
-                <button class="vector-button">
-                  <img src="/public/vectors/down.svg" alt="arrow down" />
-                </button>
-              </div>
-            </div>
-            <div class="checkbox-group">
-              <div class="checkbox-container">
-                <input id="fantasy-checkbox-desktop" type="checkbox" />
-                <label for="fantasy-checkbox-desktop">ფენტეზი</label>
-                <button class="vector-button">
-                  <img src="/public/vectors/down.svg" alt="arrow down" />
-                </button>
-              </div>
-            </div>
-            <div class="checkbox-group">
-              <div class="checkbox-container">
-                <input id="astrology-checkbox-desktop" type="checkbox" />
-                <label for="astrology-checkbox-desktop">ასტროლოგია</label>
-                <button class="vector-button">
-                  <img src="/public/vectors/down.svg" alt="arrow down" />
-                </button>
-              </div>
-            </div>
-          </ul>
-          <button class="base-button">ძებნა</button>
-        </section>
+              <button class="base-button filter-content-submit-button">
+                ძებნა
+              </button>
+            </section>
+          </div>
+        </div>
         <section class="right-section">
           <section class="search-controls">
             <div class="search-input-container">
@@ -192,7 +214,7 @@
               <span>ფილტრი</span>
               <img src="/public/vectors/filter.svg" height="32px" />
             </button>
-            <ul class="selected-filter-list">
+            <ul id="filter-label-slot" class="selected-filter-list">
               <li class="selected-filter-item">
                 ასტროლოგია
                 <button class="selected-filter-remove-button vector-button">
@@ -782,7 +804,9 @@
               </div>
             </div>
           </ul>
-          <button class="base-button filter-content-submit-button">ძებნა</button>
+          <button class="base-button filter-content-submit-button">
+            ძებნა
+          </button>
         </section>
       </div>
     </dialog>
