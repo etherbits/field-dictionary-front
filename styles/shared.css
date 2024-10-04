@@ -92,7 +92,7 @@
   width: 0;
   max-width: 390px;
   font-size: 14px;
-  z-index: 10;
+  z-index: 20;
   left: 50%;
   top: calc(100% + 8px);
   padding: 6px 8px;
@@ -101,6 +101,11 @@
   pointer-events: none;
   color: rgb(var(--color-black));
   overflow: hidden;
+}
+
+/* Flow reverse tooltip*/
+.tooltip-lr::after {
+  transform: translateX(-100%);
 }
 
 .tooltip-l::after {
@@ -662,6 +667,10 @@ dialog .info-text {
 
   .search-result-number {
     display: inline;
+  }
+
+  .tooltip-lr::after {
+    transform: translateX(0);
   }
 
   .pagination {
