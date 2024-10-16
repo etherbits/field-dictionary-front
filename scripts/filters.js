@@ -10,6 +10,8 @@ checkboxGroups.forEach((checkboxGroup) => {
 makeTagsDerived()
 makeFiltersResetable()
 
+getTopLevelFilterData()
+
 function makeFiltersResetable() {
   const resetFiltersButton = filterContent.querySelector(
     '.reset-filters-button'
@@ -136,7 +138,7 @@ function setFilterLabels() {
 
 function getTopLevelFilterData() {
   const rootCheckboxGroups = filterContent.querySelectorAll(
-    '& > .checkbox-list > .checkbox-group'
+    '.checkbox-list.level-1 > .checkbox-group'
   )
 
   const checkboxData = []

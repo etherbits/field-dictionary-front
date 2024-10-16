@@ -35,29 +35,19 @@ const errorDialogCloseButton = document.querySelector(
   '#error-modal-close-button'
 )
 
-let submitStatus = 'error'
-
 subscribeForm.addEventListener('submit', (e) => {
   e.preventDefault()
-  if (emailInput.value.length === 0) {
-    submitStatus = 'empty'
-  } else {
-    submitStatus = 'sent'
-  }
 })
 
 const subscribeButton = subscribeForm.querySelector('button')
 subscribeButton.addEventListener('click', () => {
-  submitStatus = 'error'
-  setTimeout(() => {
-    if (submitStatus === 'sent') {
-      successDialog.showModal()
-    } else if (submitStatus === 'error') {
-      errorDialog.showModal()
-    } else {
-      emailInput.focus()
-    }
-  }, 200)
+  if (!emailInput.value.includes('@')) {
+    emailInput.focus()
+  } else if (emailInput.checkValidity()) {
+    successDialog.showModal()
+  } else {
+    errorDialog.showModal()
+  }
 })
 
 errorDialogCloseButton.addEventListener('click', () => {

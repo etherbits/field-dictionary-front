@@ -11,7 +11,7 @@ errorableFields.forEach((field) => {
     if (e.target.value.length === 0) {
       error.textContent = 'შეავსეთ ველი'
     } else {
-      error.textContent = 'მითიტებული ელ.ფოსტა არასწორია'
+      error.textContent = 'მიუთითეთ სწორი ელ. ფოსტა'
     }
   })
 })
@@ -54,4 +54,41 @@ function addInitialSubject() {
   if (!initialSubject) return
 
   subjectField.value = initialSubject
+}
+
+const emailField = document.querySelector('#subscribe-form input[name="email"]')
+
+if (emailField) {
+  attachEmailSubValidation()
+}
+
+function attachEmailSubValidation() {
+  function checkEmailValidity(val) {
+    const emailRegexWithAtt = new RegExp('^.+@.+\\..+')
+
+    if (!val.includes('@')) {
+      return true
+    }
+
+    if (emailRegexWithAtt.test(val)) {
+      return true
+    }
+
+    return false
+  }
+
+  emailField.addEventListener('blur', () => {
+    const isEmailValid = checkEmailValidity(emailField.value)
+
+    emailField.setCustomValidity(isEmailValid ? '' : 'invalid')
+  })
+
+  emailField.addEventListener('keyup', (e) => {
+    const val = e.target.value
+
+    const isEmailValid = checkEmailValidity(val)
+    if (!isEmailValid) return
+
+    emailField.setCustomValidity('')
+  })
 }

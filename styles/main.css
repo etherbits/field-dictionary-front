@@ -295,6 +295,40 @@ a {
   pointer-events: none;
 }
 
+.checkbox-outer-container {
+  background: transparent;
+  border-radius: 10px;
+  padding: 12px 8px;
+  padding-right: 24px;
+  border: 1.2px solid rgb(var(--color-light-blue-2));
+  max-height: 420px;
+  max-width: 285px;
+  overflow: auto;
+}
+
+.checkbox-search-container {
+  display: flex;
+  /* padding-left: 6px; */
+  /* padding-right: 10px; */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.checkbox-search {
+  width: 100%;
+  background: transparent;
+  border: none;
+  /* padding: 12px 0; */
+  /* padding-right: 6px; */
+}
+
+.checkbox-search:focus {
+  outline: none;
+}
+.checkbox-search::placeholder {
+  color: rgb(var(--color-gray));
+}
+
 .checkbox-list {
   display: flex;
   flex-direction: column;
