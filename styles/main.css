@@ -61,8 +61,13 @@
 
 .selected-filter-list {
   display: none;
-  gap: 20px;
+  gap: 10px 20px;
   flex-wrap: wrap;
+  border: solid 1.2px rgb(var(--color-blue-2));
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 174px;
+  overflow: auto;
 }
 
 .selected-filter-item {
@@ -302,7 +307,6 @@ a {
   padding-right: 24px;
   border: 1.2px solid rgb(var(--color-light-blue-2));
   max-height: 420px;
-  max-width: 285px;
   overflow: auto;
 }
 
@@ -564,6 +568,10 @@ a {
     padding: 0;
     transform: translateY(0);
     overflow-y: inherit;
+  }
+
+  .checkbox-outer-container {
+    max-width: 285px;
   }
 
   #filter-modal-close-button {
