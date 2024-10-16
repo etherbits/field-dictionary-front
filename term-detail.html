@@ -142,9 +142,11 @@
             class="base-field sub-input-container errorable-field"
             id="subscribe-form"
           >
+            <!-- Not using type="email" because of the non-standard validation requirements -->
             <input
               class="sub-input field-input"
-              type="email"
+              name="email"
+              type="text"
               placeholder="ელ. ფოსტა"
             />
             <button class="sub-button">
@@ -162,7 +164,7 @@
                 />
               </svg>
             </button>
-            <span>მითითებული ელ. ფოსტა არასწორია</span>
+            <span>მიუთითეთ სწორი ელ. ფოსტა</span>
           </form>
         </div>
         <div class="partner-group">
