@@ -365,13 +365,19 @@ a {
 
 .checkbox-container {
   display: flex;
-  align-items: center;
+  align-items: top;
   gap: 10px;
 }
 
 .checkbox-container .vector-button {
   margin-left: auto;
   rotate: -90deg;
+  height: fit-content;
+}
+
+.checkbox-container label {
+  flex: 1;
+  margin-top: -3.5px;
 }
 
 .checkbox-container input {
