@@ -373,6 +373,7 @@ a {
   margin-left: auto;
   rotate: -90deg;
   height: fit-content;
+  margin-top: -2px;
 }
 
 .checkbox-container label {
