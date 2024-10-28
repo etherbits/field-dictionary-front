@@ -351,16 +351,10 @@ a {
   rotate: 0deg;
 }
 
-.checkbox-list.level-2 {
-  margin-left: 30px;
-  margin-top: 10px;
-  gap: 4px;
-}
-
+.checkbox-list.level-2,
 .checkbox-list.level-3 {
   margin-left: 30px;
-  margin-top: 4px;
-  gap: 4px;
+  margin-top: 10px;
 }
 
 .checkbox-container {
