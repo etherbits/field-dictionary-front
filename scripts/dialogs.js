@@ -27,33 +27,6 @@ dialogs.forEach((dialog) =>
   })
 )
 
-const subscribeForm = document.querySelector('#subscribe-form')
-const emailInput = subscribeForm.querySelector('input')
-const successDialog = document.querySelector('#success-modal')
-const errorDialog = document.querySelector('#error-modal')
-const errorDialogCloseButton = document.querySelector(
-  '#error-modal-close-button'
-)
-
-subscribeForm.addEventListener('submit', (e) => {
-  e.preventDefault()
-})
-
-const subscribeButton = subscribeForm.querySelector('button')
-subscribeButton.addEventListener('click', () => {
-  if (!emailInput.value.includes('@')) {
-    emailInput.focus()
-  } else if (emailInput.checkValidity()) {
-    successDialog.showModal()
-  } else {
-    errorDialog.showModal()
-  }
-})
-
-errorDialogCloseButton.addEventListener('click', () => {
-  errorDialog.close()
-})
-
 const contactForm = document.querySelector('#contact-form')
 const successDialogContact = document.querySelector('#success-modal-contact')
 const errorDialogContact = document.querySelector('#error-modal-contact')
